@@ -3,3 +3,4 @@ build/
 .idea/
 android/.gradle/
 ios/Pods/
+.env
