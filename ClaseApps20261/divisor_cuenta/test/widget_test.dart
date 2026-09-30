@@ -1,30 +1,45 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
+import 'package:divisor_cuenta/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:divisor_cuenta/main.dart';
-
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  testWidgets('divide en partes iguales con propina', (tester) async {
+    await tester.pumpWidget(const DivisorCuentaApp());
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
-
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
+    await tester.enterText(
+      find.widgetWithText(TextField, 'Total de la cuenta'),
+      '100',
+    );
     await tester.pump();
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    // 100 + 10% de propina (por defecto) entre 2 personas.
+    expect(find.text('\$55.00'), findsNWidgets(3));
+    expect(find.text('\$110.00'), findsOneWidget);
+
+    await tester.ensureVisible(find.text('Agregar persona'));
+    await tester.tap(find.text('Agregar persona'));
+    await tester.pump();
+
+    expect(find.text('Personas (3)'), findsOneWidget);
+    expect(find.text('\$36.67'), findsNWidgets(3));
+    expect(find.text('\$36.66'), findsOneWidget);
+  });
+
+  testWidgets('divide por consumo', (tester) async {
+    await tester.pumpWidget(const DivisorCuentaApp());
+
+    await tester.tap(find.text('Por consumo'));
+    await tester.pump();
+
+    final consumos = find.widgetWithText(TextField, 'Consumió');
+    expect(consumos, findsNWidgets(2));
+
+    await tester.enterText(consumos.at(0), '30');
+    await tester.enterText(consumos.at(1), '10');
+    await tester.pump();
+
+    expect(find.text('\$33.00'), findsOneWidget);
+    expect(find.text('\$11.00'), findsOneWidget);
+    expect(find.text('\$44.00'), findsOneWidget);
   });
 }
