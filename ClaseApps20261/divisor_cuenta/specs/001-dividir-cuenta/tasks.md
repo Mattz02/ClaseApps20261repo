@@ -55,8 +55,8 @@ a `divisor_cuenta/`.
 
 **Purpose**: Estructura de carpetas y limpieza de la plantilla
 
-- [ ] T001 Crear las carpetas `lib/domain/`, `lib/data/`, `lib/presentation/`, `test/domain/`, `test/data/` y `test/presentation/` según la estructura de plan.md
-- [ ] T002 Eliminar `test/widget_test.dart` (prueba del contador de la plantilla, que dejará de compilar al cambiar `lib/main.dart`). Aprobado por D3
+- [X] T001 Crear las carpetas `lib/domain/`, `lib/data/`, `lib/presentation/`, `test/domain/`, `test/data/` y `test/presentation/` según la estructura de plan.md
+- [X] T002 Eliminar `test/widget_test.dart` (prueba del contador de la plantilla, que dejará de compilar al cambiar `lib/main.dart`). Aprobado por D3
 - [x] T003 [P] Actualizar `specs/001-dividir-cuenta/spec.md` (FR-009, FR-011, FR-012, Edge Cases y Assumptions) con los topes de D1 y el máximo de 2 decimales de D2. Hecho el 2026-09-30 tras `/speckit-analyze`
 
 ---
@@ -67,11 +67,11 @@ a `divisor_cuenta/`.
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T004 [P] Crear la clase `Cuenta` en `lib/domain/cuenta.dart` con `final int montoCentavos` ("1 ≤ valor ≤ 99 999 999 999 (es decir, 0.01 a 999 999 999.99)"), `final int personas` ("1 ≤ valor ≤ 1 000 000") y `final int propinaCentesimas` ("0 ≤ valor ≤ 99 999 (0 % a 999.99 %; 10 % = 1000)"), con constructor `const` y parámetros nombrados `required`
-- [ ] T005 [P] Crear la clase `Resultado` en `lib/domain/resultado.dart` con `final int montoPorPersonaCentavos` ("≥ 0; ya redondeado según la estrategia elegida") y constructor `const`
-- [ ] T006 [P] Crear `enum ErrorEntrada` en `lib/domain/error_entrada.dart` con los valores y el `final String mensaje` exacto: `montoInvalido('Monto inválido')`, `personasMenorQueUno('Debe haber al menos una persona')`, `personasInvalido('Número de personas inválido')`, `propinaInvalida('Propina inválida')`
-- [ ] T007 [P] Crear `abstract interface class EstrategiaRedondeo` en `lib/domain/estrategia_redondeo.dart` con un único método `int redondear({required int numerador, required int denominador})`. El comentario `///` documenta el contrato de contracts/dominio.md: recibe centavos exactos = numerador / denominador, precondiciones `numerador >= 0` y `denominador > 0`, devuelve centavos `>= 0` y no lanza errores
-- [ ] T008 Crear la clase `ResultadoValidacion` en `lib/domain/resultado_validacion.dart` con `final Cuenta? cuenta` ("no nulo si y solo si `errores` está vacío"), `final List<ErrorEntrada> errores` ("en orden: monto, personas, propina") y el getter `bool get esValida => errores.isEmpty` (depende de T004 y T006)
+- [X] T004 [P] Crear la clase `Cuenta` en `lib/domain/cuenta.dart` con `final int montoCentavos` ("1 ≤ valor ≤ 99 999 999 999 (es decir, 0.01 a 999 999 999.99)"), `final int personas` ("1 ≤ valor ≤ 1 000 000") y `final int propinaCentesimas` ("0 ≤ valor ≤ 99 999 (0 % a 999.99 %; 10 % = 1000)"), con constructor `const` y parámetros nombrados `required`
+- [X] T005 [P] Crear la clase `Resultado` en `lib/domain/resultado.dart` con `final int montoPorPersonaCentavos` ("≥ 0; ya redondeado según la estrategia elegida") y constructor `const`
+- [X] T006 [P] Crear `enum ErrorEntrada` en `lib/domain/error_entrada.dart` con los valores y el `final String mensaje` exacto: `montoInvalido('Monto inválido')`, `personasMenorQueUno('Debe haber al menos una persona')`, `personasInvalido('Número de personas inválido')`, `propinaInvalida('Propina inválida')`
+- [X] T007 [P] Crear `abstract interface class EstrategiaRedondeo` en `lib/domain/estrategia_redondeo.dart` con un único método `int redondear({required int numerador, required int denominador})`. El comentario `///` documenta el contrato de contracts/dominio.md: recibe centavos exactos = numerador / denominador, precondiciones `numerador >= 0` y `denominador > 0`, devuelve centavos `>= 0` y no lanza errores
+- [X] T008 Crear la clase `ResultadoValidacion` en `lib/domain/resultado_validacion.dart` con `final Cuenta? cuenta` ("no nulo si y solo si `errores` está vacío"), `final List<ErrorEntrada> errores` ("en orden: monto, personas, propina") y el getter `bool get esValida => errores.isEmpty` (depende de T004 y T006)
 
 **Checkpoint**: domain listo; las historias pueden empezar.
 
@@ -87,23 +87,23 @@ a `divisor_cuenta/`.
 
 > **NOTE: Write these tests FIRST, ensure they FAIL before implementation**
 
-- [ ] T009 [P] [US1] Pruebas de `RedondeoExacto` en `test/data/redondeo_exacto_test.dart`: `(110000000, 40000) → 2750`, `(90000000, 30000) → 3000`, `(10000000, 30000) → 333`, mitad hacia arriba `(667, 2) → 334`, `(0, 1) → 0`
-- [ ] T010 [P] [US1] Pruebas de `CalcularDivision` en `test/domain/calcular_division_test.dart` con una estrategia falsa definida en la prueba que guarda los argumentos recibidos: `Cuenta(montoCentavos: 10000, personas: 4, propinaCentesimas: 1000)` debe pasarle `numerador 110000000` y `denominador 40000`, y devolver `Resultado` con los centavos que retorne la estrategia falsa
-- [ ] T011 [P] [US1] Grupo "entradas válidas" en `test/domain/validar_entrada_test.dart`: `('100.00','4','10') → Cuenta(10000, 4, 1000)`, `'12,50' → 1250 centavos`, `' 90 '` con espacios → 9000, propina `'12.5' → 1250`, propina con coma `'12,5' → 1250`, propina `'' → 0`, `esValida == true` y `errores` vacío
-- [ ] T012 [P] [US1] Pruebas de `FormateadorMoneda` en `test/presentation/formateador_moneda_test.dart`: `2750 → '27.50'`, `400 → '4.00'`, `5 → '0.05'`, `0 → '0.00'`, `123456 → '1234.56'`
-- [ ] T013 [P] [US1] Grupo "cálculo" en `test/presentation/divisor_controller_test.dart`, con una estrategia falsa y `ValidarEntrada`, `CalcularDivision` y `FormateadorMoneda` reales: `modos` respeta el orden del mapa; `modoSeleccionado` inicial es el primero; `calcular('100.00','4','10')` deja `montoPorPersona` según la estrategia; `descartarResultado()` y `seleccionarModo(...)` lo dejan en `null`; `seleccionarModo('inexistente')` lanza `ArgumentError`
-- [ ] T014 [P] [US1] Pruebas de widget en `test/aceptacion_test.dart` que usan `construirApp()` de `lib/main.dart` y las Keys de contracts/pantalla.md (`campo_monto`, `campo_personas`, `campo_propina`, `boton_calcular`, `texto_resultado`): escenario 1 (100.00, 4, 10 → '27.50'), escenario 2 (90.00, 3, 0 → '30.00'), escenario 5 (10.00, 3, 0 → '3.33'), FR-003 (antes de tocar "Calcular" no aparece `texto_resultado`, aunque los datos sean válidos) y FR-014 (después de calcular, cambiar un campo oculta `texto_resultado`)
+- [X] T009 [P] [US1] Pruebas de `RedondeoExacto` en `test/data/redondeo_exacto_test.dart`: `(110000000, 40000) → 2750`, `(90000000, 30000) → 3000`, `(10000000, 30000) → 333`, mitad hacia arriba `(667, 2) → 334`, `(0, 1) → 0`
+- [X] T010 [P] [US1] Pruebas de `CalcularDivision` en `test/domain/calcular_division_test.dart` con una estrategia falsa definida en la prueba que guarda los argumentos recibidos: `Cuenta(montoCentavos: 10000, personas: 4, propinaCentesimas: 1000)` debe pasarle `numerador 110000000` y `denominador 40000`, y devolver `Resultado` con los centavos que retorne la estrategia falsa
+- [X] T011 [P] [US1] Grupo "entradas válidas" en `test/domain/validar_entrada_test.dart`: `('100.00','4','10') → Cuenta(10000, 4, 1000)`, `'12,50' → 1250 centavos`, `' 90 '` con espacios → 9000, propina `'12.5' → 1250`, propina con coma `'12,5' → 1250`, propina `'' → 0`, `esValida == true` y `errores` vacío
+- [X] T012 [P] [US1] Pruebas de `FormateadorMoneda` en `test/presentation/formateador_moneda_test.dart`: `2750 → '27.50'`, `400 → '4.00'`, `5 → '0.05'`, `0 → '0.00'`, `123456 → '1234.56'`
+- [X] T013 [P] [US1] Grupo "cálculo" en `test/presentation/divisor_controller_test.dart`, con una estrategia falsa y `ValidarEntrada`, `CalcularDivision` y `FormateadorMoneda` reales: `modos` respeta el orden del mapa; `modoSeleccionado` inicial es el primero; `calcular('100.00','4','10')` deja `montoPorPersona` según la estrategia; `descartarResultado()` y `seleccionarModo(...)` lo dejan en `null`; `seleccionarModo('inexistente')` lanza `ArgumentError`
+- [X] T014 [P] [US1] Pruebas de widget en `test/aceptacion_test.dart` que usan `construirApp()` de `lib/main.dart` y las Keys de contracts/pantalla.md (`campo_monto`, `campo_personas`, `campo_propina`, `boton_calcular`, `texto_resultado`): escenario 1 (100.00, 4, 10 → '27.50'), escenario 2 (90.00, 3, 0 → '30.00'), escenario 5 (10.00, 3, 0 → '3.33'), FR-003 (antes de tocar "Calcular" no aparece `texto_resultado`, aunque los datos sean válidos) y FR-014 (después de calcular, cambiar un campo oculta `texto_resultado`)
 
 ### Implementation for User Story 1
 
-- [ ] T015 [P] [US1] Implementar `RedondeoExacto implements EstrategiaRedondeo` en `lib/data/redondeo_exacto.dart`: `(2 * numerador + denominador) ~/ (2 * denominador)`, con un ejemplo en el comentario (`10000000 / 30000 → 333`)
-- [ ] T016 [P] [US1] Implementar `CalcularDivision.calcular(Cuenta cuenta, EstrategiaRedondeo estrategia)` en `lib/domain/calcular_division.dart`: `numerador = montoCentavos * (10000 + propinaCentesimas)`, `denominador = 10000 * personas`; devuelve `Resultado(montoPorPersonaCentavos: estrategia.redondear(...))`. No valida ni formatea
-- [ ] T017 [P] [US1] Implementar `ValidarEntrada.validar({required String monto, required String personas, required String propina})` en `lib/domain/validar_entrada.dart` para entradas válidas: recorta espacios; monto y propina con `^\d+([.,]\d{1,2})?$` (D2), convertidos a centavos o centésimas a partir de los dígitos del texto, sin `double`; personas con `^-?\d+$` e `int.tryParse`, y un entero < 1 da `personasMenorQueUno` (así `CalcularDivision` nunca divide entre 0); propina vacía = 0. Si un campo no cumple su expresión, agrega el `ErrorEntrada` de ese campo (`montoInvalido`, `personasInvalido` o `propinaInvalida`); las reglas finas se completan en T026. Nunca lanza excepciones
-- [ ] T018 [P] [US1] Implementar `FormateadorMoneda.formatear(int centavos)` en `lib/presentation/formateador_moneda.dart`: `'${centavos ~/ 100}.${(centavos % 100).toString().padLeft(2, '0')}'`, sin símbolo de moneda
-- [ ] T019 [US1] Implementar `DivisorController` en `lib/presentation/divisor_controller.dart` según contracts/pantalla.md: constructor con `validador`, `calculadora`, `estrategias` (`Map<String, EstrategiaRedondeo>`, no vacío) y `formateador`; `modos`, `modoSeleccionado`, `montoPorPersona`, `seleccionarModo` (lanza `ArgumentError` si el modo no existe; llama a `descartarResultado`), `calcular` (valida; si es válida, calcula con la estrategia del modo elegido y formatea) y `descartarResultado`. No importa nada de `lib/data/` (depende de T016, T017, T018)
-- [ ] T020 [US1] Implementar `PantallaDivisor` (`StatefulWidget`) en `lib/presentation/pantalla_divisor.dart` según la tabla de contracts/pantalla.md: 3 `TextField` con sus Keys y etiquetas ("Monto total", "Número de personas", "Propina (%)"), `SegmentedButton` `selector_modo` construido desde `controlador.modos`, `FilledButton` `boton_calcular` "Calcular" y el resultado `texto_resultado` ("Cada persona paga" + monto) visible solo si `montoPorPersona != null`. Cada acción llama al controller dentro de `setState`; el `onChanged` de cada campo llama a `descartarResultado`; los `TextEditingController` se liberan en `dispose` (depende de T019)
-- [ ] T021 [US1] Reemplazar `lib/main.dart` por el punto de composición: función `Widget construirApp()` que crea `ValidarEntrada`, `CalcularDivision`, `FormateadorMoneda`, el mapa `{'Exacto': RedondeoExacto()}` y el `DivisorController`, y devuelve `MaterialApp(title: 'Divisor de Cuenta', home: PantallaDivisor(controlador: ...))`; `void main() => runApp(construirApp());` (depende de T015, T020)
-- [ ] T022 [US1] Ejecutar `flutter test` y `flutter analyze` y dejar en verde todas las pruebas de T009 a T014
+- [X] T015 [P] [US1] Implementar `RedondeoExacto implements EstrategiaRedondeo` en `lib/data/redondeo_exacto.dart`: `(2 * numerador + denominador) ~/ (2 * denominador)`, con un ejemplo en el comentario (`10000000 / 30000 → 333`)
+- [X] T016 [P] [US1] Implementar `CalcularDivision.calcular(Cuenta cuenta, EstrategiaRedondeo estrategia)` en `lib/domain/calcular_division.dart`: `numerador = montoCentavos * (10000 + propinaCentesimas)`, `denominador = 10000 * personas`; devuelve `Resultado(montoPorPersonaCentavos: estrategia.redondear(...))`. No valida ni formatea
+- [X] T017 [P] [US1] Implementar `ValidarEntrada.validar({required String monto, required String personas, required String propina})` en `lib/domain/validar_entrada.dart` para entradas válidas: recorta espacios; monto y propina con `^\d+([.,]\d{1,2})?$` (D2), convertidos a centavos o centésimas a partir de los dígitos del texto, sin `double`; personas con `^-?\d+$` e `int.tryParse`, y un entero < 1 da `personasMenorQueUno` (así `CalcularDivision` nunca divide entre 0); propina vacía = 0. Si un campo no cumple su expresión, agrega el `ErrorEntrada` de ese campo (`montoInvalido`, `personasInvalido` o `propinaInvalida`); las reglas finas se completan en T026. Nunca lanza excepciones
+- [X] T018 [P] [US1] Implementar `FormateadorMoneda.formatear(int centavos)` en `lib/presentation/formateador_moneda.dart`: `'${centavos ~/ 100}.${(centavos % 100).toString().padLeft(2, '0')}'`, sin símbolo de moneda
+- [X] T019 [US1] Implementar `DivisorController` en `lib/presentation/divisor_controller.dart` según contracts/pantalla.md: constructor con `validador`, `calculadora`, `estrategias` (`Map<String, EstrategiaRedondeo>`, no vacío) y `formateador`; `modos`, `modoSeleccionado`, `montoPorPersona`, `seleccionarModo` (lanza `ArgumentError` si el modo no existe; llama a `descartarResultado`), `calcular` (valida; si es válida, calcula con la estrategia del modo elegido y formatea) y `descartarResultado`. No importa nada de `lib/data/` (depende de T016, T017, T018)
+- [X] T020 [US1] Implementar `PantallaDivisor` (`StatefulWidget`) en `lib/presentation/pantalla_divisor.dart` según la tabla de contracts/pantalla.md: 3 `TextField` con sus Keys y etiquetas ("Monto total", "Número de personas", "Propina (%)"), `SegmentedButton` `selector_modo` construido desde `controlador.modos`, `FilledButton` `boton_calcular` "Calcular" y el resultado `texto_resultado` ("Cada persona paga" + monto) visible solo si `montoPorPersona != null`. Cada acción llama al controller dentro de `setState`; el `onChanged` de cada campo llama a `descartarResultado`; los `TextEditingController` se liberan en `dispose` (depende de T019)
+- [X] T021 [US1] Reemplazar `lib/main.dart` por el punto de composición: función `Widget construirApp()` que crea `ValidarEntrada`, `CalcularDivision`, `FormateadorMoneda`, el mapa `{'Exacto': RedondeoExacto()}` y el `DivisorController`, y devuelve `MaterialApp(title: 'Divisor de Cuenta', home: PantallaDivisor(controlador: ...))`; `void main() => runApp(construirApp());` (depende de T015, T020)
+- [X] T022 [US1] Ejecutar `flutter test` y `flutter analyze` y dejar en verde todas las pruebas de T009 a T014
 
 **Checkpoint**: MVP: la app calcula en modo exacto y pasa los escenarios 1, 2 y 5.
 
@@ -117,16 +117,16 @@ a `divisor_cuenta/`.
 
 ### Tests for User Story 2 ⚠️
 
-- [ ] T023 [P] [US2] Grupo "entradas inválidas" en `test/domain/validar_entrada_test.dart`. Monto `'abc'`, `''`, `'0'`, `'0.00'`, `'-5'`, `'1e5'`, `'12.345'` (D2) y `'1000000000'` (D1) → `montoInvalido`. Personas `'0'` y `'-3'` → `personasMenorQueUno`. Personas `''`, `'2.5'`, `'dos'` y `'1000001'` (D1) → `personasInvalido`. Propina `'-1'`, `'abc'` y `'1000'` (D1) → `propinaInvalida`. Con los tres campos inválidos, `errores` sale en orden monto, personas, propina y `cuenta == null`
-- [ ] T024 [P] [US2] Grupo "errores" en `test/presentation/divisor_controller_test.dart`: después de `calcular('abc','0','x')`, `errorMonto`, `errorPersonas` y `errorPropina` tienen sus mensajes y `montoPorPersona == null`; un `calcular` válido posterior borra los errores; `descartarResultado()` también los borra
-- [ ] T025 [P] [US2] Agregar a `test/aceptacion_test.dart`: escenario 3 (50.00 y 0 personas → 'Debe haber al menos una persona', sin `texto_resultado`), escenario 4 (monto 'abc' → 'Monto inválido', sin `texto_resultado`), varios campos inválidos a la vez (se muestran los 3 mensajes) y recuperación (corregir y volver a calcular muestra el resultado)
+- [X] T023 [P] [US2] Grupo "entradas inválidas" en `test/domain/validar_entrada_test.dart`. Monto `'abc'`, `''`, `'0'`, `'0.00'`, `'-5'`, `'1e5'`, `'12.345'` (D2) y `'1000000000'` (D1) → `montoInvalido`. Personas `'0'` y `'-3'` → `personasMenorQueUno`. Personas `''`, `'2.5'`, `'dos'` y `'1000001'` (D1) → `personasInvalido`. Propina `'-1'`, `'abc'` y `'1000'` (D1) → `propinaInvalida`. Con los tres campos inválidos, `errores` sale en orden monto, personas, propina y `cuenta == null`
+- [X] T024 [P] [US2] Grupo "errores" en `test/presentation/divisor_controller_test.dart`: después de `calcular('abc','0','x')`, `errorMonto`, `errorPersonas` y `errorPropina` tienen sus mensajes y `montoPorPersona == null`; un `calcular` válido posterior borra los errores; `descartarResultado()` también los borra
+- [X] T025 [P] [US2] Agregar a `test/aceptacion_test.dart`: escenario 3 (50.00 y 0 personas → 'Debe haber al menos una persona', sin `texto_resultado`), escenario 4 (monto 'abc' → 'Monto inválido', sin `texto_resultado`), varios campos inválidos a la vez (se muestran los 3 mensajes) y recuperación (corregir y volver a calcular muestra el resultado)
 
 ### Implementation for User Story 2
 
-- [ ] T026 [US2] Completar las reglas de `ValidarEntrada` en `lib/domain/validar_entrada.dart` según la tabla ErrorEntrada de data-model.md. Monto igual a 0 o mayor que 99 999 999 999 centavos (D1) → `montoInvalido`. Personas: vacío, no entero o > 1 000 000 (D1) → `personasInvalido`; los números demasiado largos para `int` también dan `personasInvalido`. Propina > 99 999 centésimas (D1) → `propinaInvalida`. Siempre valida los 3 campos, con como máximo un error por campo
-- [ ] T027 [US2] Agregar a `DivisorController` en `lib/presentation/divisor_controller.dart` los getters `errorMonto`, `errorPersonas` y `errorPropina` (el `mensaje` del `ErrorEntrada` de cada campo, o `null`): `calcular` con errores los guarda y deja `montoPorPersona` en `null`; un `calcular` válido borra los errores; `descartarResultado` borra resultado y errores
-- [ ] T028 [US2] En `lib/presentation/pantalla_divisor.dart`, mostrar `errorText` en cada `TextField` desde `errorMonto`, `errorPersonas` y `errorPropina`
-- [ ] T029 [US2] Ejecutar `flutter test` y `flutter analyze` y dejar en verde las pruebas de T023 a T025 sin romper las de US1
+- [X] T026 [US2] Completar las reglas de `ValidarEntrada` en `lib/domain/validar_entrada.dart` según la tabla ErrorEntrada de data-model.md. Monto igual a 0 o mayor que 99 999 999 999 centavos (D1) → `montoInvalido`. Personas: vacío, no entero o > 1 000 000 (D1) → `personasInvalido`; los números demasiado largos para `int` también dan `personasInvalido`. Propina > 99 999 centésimas (D1) → `propinaInvalida`. Siempre valida los 3 campos, con como máximo un error por campo
+- [X] T027 [US2] Agregar a `DivisorController` en `lib/presentation/divisor_controller.dart` los getters `errorMonto`, `errorPersonas` y `errorPropina` (el `mensaje` del `ErrorEntrada` de cada campo, o `null`): `calcular` con errores los guarda y deja `montoPorPersona` en `null`; un `calcular` válido borra los errores; `descartarResultado` borra resultado y errores
+- [X] T028 [US2] En `lib/presentation/pantalla_divisor.dart`, mostrar `errorText` en cada `TextField` desde `errorMonto`, `errorPersonas` y `errorPropina`
+- [X] T029 [US2] Ejecutar `flutter test` y `flutter analyze` y dejar en verde las pruebas de T023 a T025 sin romper las de US1
 
 **Checkpoint**: US1 y US2 funcionan; ninguna entrada inválida produce un resultado (SC-005).
 
@@ -140,14 +140,14 @@ a `divisor_cuenta/`.
 
 ### Tests for User Story 3 ⚠️
 
-- [ ] T030 [P] [US3] Pruebas de `RedondeoHaciaArriba` en `test/data/redondeo_hacia_arriba_test.dart`: `(10000000, 30000) → 400`, `(90000000, 30000) → 3000` (un entero no sube), `(110000000, 40000) → 2800`, `(1, 1) → 100`, `(0, 1) → 0`
-- [ ] T031 [P] [US3] Agregar a `test/aceptacion_test.dart`: el `selector_modo` muestra "Exacto" y "Hacia arriba"; escenario 6 (10.00, 3, 0, Hacia arriba → '4.00'); 90.00, 3, 0, Hacia arriba → '30.00'; cambiar de modo después de calcular oculta `texto_resultado`
+- [X] T030 [P] [US3] Pruebas de `RedondeoHaciaArriba` en `test/data/redondeo_hacia_arriba_test.dart`: `(10000000, 30000) → 400`, `(90000000, 30000) → 3000` (un entero no sube), `(110000000, 40000) → 2800`, `(1, 1) → 100`, `(0, 1) → 0`
+- [X] T031 [P] [US3] Agregar a `test/aceptacion_test.dart`: el `selector_modo` muestra "Exacto" y "Hacia arriba"; escenario 6 (10.00, 3, 0, Hacia arriba → '4.00'); 90.00, 3, 0, Hacia arriba → '30.00'; cambiar de modo después de calcular oculta `texto_resultado`
 
 ### Implementation for User Story 3
 
-- [ ] T032 [US3] Implementar `RedondeoHaciaArriba implements EstrategiaRedondeo` en `lib/data/redondeo_hacia_arriba.dart`: con `d = 100 * denominador`, devolver `((numerador + d - 1) ~/ d) * 100`, con un ejemplo en el comentario (`10000000 / 30000 → 400`)
-- [ ] T033 [US3] En `lib/main.dart`, agregar `'Hacia arriba': RedondeoHaciaArriba()` al mapa de estrategias, después de `'Exacto'`. No editar `DivisorController` ni `PantallaDivisor` (depende de T032)
-- [ ] T034 [US3] Ejecutar `flutter test` y `flutter analyze` y dejar en verde las pruebas de T030 y T031 sin romper US1 ni US2
+- [X] T032 [US3] Implementar `RedondeoHaciaArriba implements EstrategiaRedondeo` en `lib/data/redondeo_hacia_arriba.dart`: con `d = 100 * denominador`, devolver `((numerador + d - 1) ~/ d) * 100`, con un ejemplo en el comentario (`10000000 / 30000 → 400`)
+- [X] T033 [US3] En `lib/main.dart`, agregar `'Hacia arriba': RedondeoHaciaArriba()` al mapa de estrategias, después de `'Exacto'`. No editar `DivisorController` ni `PantallaDivisor` (depende de T032)
+- [X] T034 [US3] Ejecutar `flutter test` y `flutter analyze` y dejar en verde las pruebas de T030 y T031 sin romper US1 ni US2
 
 **Checkpoint**: las 3 historias funcionan; los 6 escenarios de aceptación pasan (SC-001).
 
@@ -157,10 +157,10 @@ a `divisor_cuenta/`.
 
 **Purpose**: Comprobaciones de la constitución y del quickstart
 
-- [ ] T035 [P] Revisar que cada clase y cada función o método de `lib/` (públicos y privados, salvo getters de una línea) tenga el comentario `///` del principio V (qué hace, por qué existe, qué recibe, qué devuelve, qué errores produce) y completar los que falten
-- [ ] T036 [P] Ejecutar `dart format lib test` y `flutter analyze` y dejarlo en "No issues found!"
-- [ ] T037 Ejecutar las 3 comprobaciones de arquitectura con `grep` de `specs/001-dividir-cuenta/quickstart.md` y corregir cualquier violación (domain sin Flutter, presentation sin data, instancias concretas solo en `lib/main.dart`)
-- [ ] T038 Ejecutar `flutter test` completo y luego los escenarios manuales de `specs/001-dividir-cuenta/quickstart.md` con `flutter run`
+- [X] T035 [P] Revisar que cada clase y cada función o método de `lib/` (públicos y privados, salvo getters de una línea) tenga el comentario `///` del principio V (qué hace, por qué existe, qué recibe, qué devuelve, qué errores produce) y completar los que falten
+- [X] T036 [P] Ejecutar `dart format lib test` y `flutter analyze` y dejarlo en "No issues found!"
+- [X] T037 Ejecutar las 3 comprobaciones de arquitectura con `grep` de `specs/001-dividir-cuenta/quickstart.md` y corregir cualquier violación (domain sin Flutter, presentation sin data, instancias concretas solo en `lib/main.dart`)
+- [ ] T038 Ejecutar `flutter test` completo y luego los escenarios manuales de `specs/001-dividir-cuenta/quickstart.md` con `flutter run`. Parcial (2026-09-30): `flutter test` pasa (70 pruebas) y `flutter build linux` compila; faltan los escenarios manuales en un dispositivo
 
 ---
 
