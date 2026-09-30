@@ -20,7 +20,8 @@ dependen de `domain`; `domain` no depende de ninguna de las dos.
 
 ## Qué NO tocar
 
-- No modifiques `test/` a menos que te lo pidan.
+- No modifiques `test/` a menos que te lo pidan o que lo exija una tarea de
+  `specs/*/tasks.md` (la constitución, principio IV, exige pruebas).
 - No agregues dependencias a `pubspec.yaml` sin avisar antes.
 - No toques `android/` ni `ios/`.
 

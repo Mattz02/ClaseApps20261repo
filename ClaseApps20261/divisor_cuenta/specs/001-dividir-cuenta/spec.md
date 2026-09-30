@@ -29,6 +29,10 @@ inválido\"; 5. 10.00, 3 personas, 0%, modo exacto -> 3.33 por persona; 6. 10.00
   y se calcula sin propina.
 - Q: ¿Qué pasa con el resultado mostrado si el usuario cambia un dato o el modo sin volver a
   tocar "Calcular"? → A: Se oculta hasta el siguiente toque en "Calcular".
+- Q: ¿Hay topes y un máximo de decimales? → A: Sí: monto ≤ 999 999 999.99, personas
+  ≤ 1 000 000, propina ≤ 999.99 %, y como máximo 2 decimales en monto y propina.
+- Q: ¿Los mensajes de error también se ocultan al cambiar un dato o el modo? → A: Sí, igual que
+  el resultado.
 
 ## User Scenarios & Testing *(mandatory)*
 
@@ -109,9 +113,13 @@ era entero).
 - **Propina negativa o no numérica**: se muestra "Propina inválida".
 - **Varios campos inválidos a la vez**: se muestra el mensaje de cada campo inválido y no hay
   resultado.
-- **El usuario cambia un dato o el modo después de calcular**: el resultado anterior deja de
-  mostrarse hasta que vuelva a tocar "Calcular", para no mostrar un monto que ya no corresponde
-  a los datos.
+- **El usuario cambia un dato o el modo después de calcular**: el resultado anterior y los
+  mensajes de error dejan de mostrarse hasta que vuelva a tocar "Calcular", para no mostrar un
+  monto o un error que ya no corresponde a los datos.
+- **Monto o propina con más de 2 decimales** (por ejemplo "12.345"): se muestra el mensaje de
+  ese campo ("Monto inválido" o "Propina inválida").
+- **Valores por encima de los topes** (monto > 999 999 999.99, personas > 1 000 000,
+  propina > 999.99 %): se muestra el mensaje de ese campo.
 - **Monto exacto con más de dos decimales** (por ejemplo 3.335): en modo exacto se redondea al
   centavo más cercano, y las mitades suben (3.335 → 3.34).
 - **La suma de lo que paga cada persona no coincide con el total** (por ejemplo 3 × 3.33 = 9.99
@@ -138,18 +146,19 @@ era entero).
   punto como separador decimal (por ejemplo 27.50 o 4.00).
 - **FR-008**: La app MUST aceptar el monto y la propina con punto o coma como separador
   decimal.
-- **FR-009**: Si el monto está vacío, no es numérico o no es mayor que cero, la app MUST
-  mostrar "Monto inválido".
+- **FR-009**: Si el monto está vacío, no es un número con como máximo 2 decimales, no es mayor
+  que cero o es mayor que 999 999 999.99, la app MUST mostrar "Monto inválido".
 - **FR-010**: Si el número de personas es un entero menor que 1, la app MUST mostrar "Debe
   haber al menos una persona".
-- **FR-011**: Si el número de personas está vacío, no es numérico o no es un entero, la app
-  MUST mostrar "Número de personas inválido".
-- **FR-012**: Si la propina está vacía, la app MUST tomarla como 0 %; si es negativa o no
-  numérica, MUST mostrar "Propina inválida".
+- **FR-011**: Si el número de personas está vacío, no es un entero o es mayor que 1 000 000,
+  la app MUST mostrar "Número de personas inválido".
+- **FR-012**: Si la propina está vacía, la app MUST tomarla como 0 %; si es negativa, no es un
+  número con como máximo 2 decimales o es mayor que 999.99, MUST mostrar "Propina inválida".
 - **FR-013**: Cuando hay al menos un dato inválido, la app MUST mostrar el mensaje de cada campo
   inválido y MUST NOT mostrar ningún resultado.
 - **FR-014**: Si el usuario modifica cualquier dato o el modo de redondeo después de calcular, la
-  app MUST ocultar el resultado anterior hasta el siguiente toque en "Calcular".
+  app MUST ocultar el resultado anterior y los mensajes de error hasta el siguiente toque en
+  "Calcular".
 - **FR-015**: La app MUST funcionar completamente sin conexión: no usa red ni guarda datos entre
   sesiones.
 
@@ -180,8 +189,7 @@ era entero).
 - La app no maneja una moneda específica: el monto se muestra sin símbolo de moneda.
 - Todas las personas pagan la misma parte; dividir por consumo individual queda fuera del
   alcance.
-- La propina se calcula sobre el monto total ingresado y no tiene un límite superior.
+- La propina se calcula sobre el monto total ingresado.
 - La propina puede tener decimales (por ejemplo 12.5 %).
-- El número de personas no tiene un límite superior.
 - Los datos no se guardan: al cerrar la app se pierden.
 - La interfaz está en español.
