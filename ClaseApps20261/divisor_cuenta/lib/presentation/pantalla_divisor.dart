@@ -101,44 +101,32 @@ class _PantallaDivisorState extends State<PantallaDivisor> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              TextField(
-                key: const Key('campo_monto'),
-                controller: _monto,
-                keyboardType: const TextInputType.numberWithOptions(
+              _construirCampo(
+                clave: const Key('campo_monto'),
+                controlador: _monto,
+                etiqueta: 'Monto total',
+                tipoTeclado: const TextInputType.numberWithOptions(
                   decimal: true,
                 ),
-                decoration: InputDecoration(
-                  labelText: 'Monto total',
-                  border: const OutlineInputBorder(),
-                  errorText: _controlador.errorMonto,
-                ),
-                onChanged: _alCambiarDato,
+                error: _controlador.errorMonto,
               ),
               const SizedBox(height: 16),
-              TextField(
-                key: const Key('campo_personas'),
-                controller: _personas,
-                keyboardType: TextInputType.number,
-                decoration: InputDecoration(
-                  labelText: 'Número de personas',
-                  border: const OutlineInputBorder(),
-                  errorText: _controlador.errorPersonas,
-                ),
-                onChanged: _alCambiarDato,
+              _construirCampo(
+                clave: const Key('campo_personas'),
+                controlador: _personas,
+                etiqueta: 'Número de personas',
+                tipoTeclado: TextInputType.number,
+                error: _controlador.errorPersonas,
               ),
               const SizedBox(height: 16),
-              TextField(
-                key: const Key('campo_propina'),
-                controller: _propina,
-                keyboardType: const TextInputType.numberWithOptions(
+              _construirCampo(
+                clave: const Key('campo_propina'),
+                controlador: _propina,
+                etiqueta: 'Propina (%)',
+                tipoTeclado: const TextInputType.numberWithOptions(
                   decimal: true,
                 ),
-                decoration: InputDecoration(
-                  labelText: 'Propina (%)',
-                  border: const OutlineInputBorder(),
-                  errorText: _controlador.errorPropina,
-                ),
-                onChanged: _alCambiarDato,
+                error: _controlador.errorPropina,
               ),
               const SizedBox(height: 16),
               SegmentedButton<String>(
@@ -164,6 +152,32 @@ class _PantallaDivisorState extends State<PantallaDivisor> {
           ),
         ),
       ),
+    );
+  }
+
+  /// Qué hace: construye un campo de entrada con borde y mensaje de error.
+  /// Por qué existe: comparte la estructura de los tres campos de la pantalla.
+  /// Recibe: la clave, el controlador de texto, la etiqueta, el tipo de teclado
+  /// y el mensaje de error (o `null` si no hay error).
+  /// Devuelve: el `TextField` que descarta el resultado cuando cambia su texto.
+  /// Errores: ninguno.
+  TextField _construirCampo({
+    required Key clave,
+    required TextEditingController controlador,
+    required String etiqueta,
+    required TextInputType tipoTeclado,
+    required String? error,
+  }) {
+    return TextField(
+      key: clave,
+      controller: controlador,
+      keyboardType: tipoTeclado,
+      decoration: InputDecoration(
+        labelText: etiqueta,
+        border: const OutlineInputBorder(),
+        errorText: error,
+      ),
+      onChanged: _alCambiarDato,
     );
   }
 
