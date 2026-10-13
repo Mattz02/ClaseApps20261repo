@@ -67,7 +67,7 @@ void main() {
       final r = validador.validar(
         monto: '999999999.99',
         personas: '1000000',
-        propina: '999.99',
+        propina: '100',
       );
       expect(r.esValida, isTrue);
     });
@@ -125,11 +125,15 @@ void main() {
       });
     }
 
-    for (final propina in ['-1', 'abc', '10.555', '1000']) {
+    for (final propina in ['-1', 'abc', '10.555']) {
       test('propina "$propina" → Propina inválida', () {
         expect(erroresDePropina(propina), [ErrorEntrada.propinaInvalida]);
       });
     }
+
+    test('propina "1000" → La propina no puede superar el 100%', () {
+      expect(erroresDePropina('1000'), [ErrorEntrada.propinaSuperaMaximo]);
+    });
 
     test('con los tres campos inválidos da los tres errores, en orden', () {
       final r = validador.validar(monto: 'abc', personas: '0', propina: 'x');
