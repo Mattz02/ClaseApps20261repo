@@ -13,8 +13,11 @@ enum ErrorEntrada {
   /// El número de personas está vacío, no es entero o supera el tope.
   personasInvalido('Número de personas inválido'),
 
-  /// La propina es negativa, no es un número válido o supera el tope.
-  propinaInvalida('Propina inválida');
+  /// La propina es negativa o no es un número válido.
+  propinaInvalida('Propina inválida'),
+
+  /// La propina supera el porcentaje máximo permitido.
+  propinaSuperaMaximo('La propina no puede superar el 100%');
 
   /// Qué hace: asocia cada error con su mensaje.
   /// Por qué existe: los valores de un `enum` con datos necesitan un

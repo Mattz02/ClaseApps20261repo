@@ -71,7 +71,10 @@ class DivisorController {
   ]);
 
   /// Mensaje de error del campo propina, o `null` si no hay error.
-  String? get errorPropina => _mensajeDe(const [ErrorEntrada.propinaInvalida]);
+  String? get errorPropina => _mensajeDe(const [
+    ErrorEntrada.propinaInvalida,
+    ErrorEntrada.propinaSuperaMaximo,
+  ]);
 
   /// Qué hace: cambia el modo de redondeo y borra el resultado anterior.
   /// Por qué existe: el usuario elige el modo (FR-002), y un resultado

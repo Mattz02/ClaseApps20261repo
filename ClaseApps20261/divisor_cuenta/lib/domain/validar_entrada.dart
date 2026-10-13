@@ -23,8 +23,8 @@ class ValidarEntrada {
   /// Número máximo de personas.
   static const personasMaximo = 1000000;
 
-  /// Propina máxima en centésimas de porcentaje: 999.99 %.
-  static const propinaMaximaCentesimas = 99999;
+  /// Propina máxima en centésimas de porcentaje: 100 %.
+  static const propinaMaximaCentesimas = 10000;
 
   /// Número con como máximo 2 decimales, con punto o coma: "12", "12.5",
   /// "12,50". Rechaza signos, letras, "1e5" y "12.345".
@@ -117,14 +117,19 @@ class ValidarEntrada {
   /// Recibe: el texto de la propina, ya sin espacios alrededor, y la lista
   /// donde se anotan los errores.
   /// Devuelve: las centésimas (vacío → 0; 10 → 1000), o `null` si no tiene el
-  /// formato (incluidos los negativos) o supera `propinaMaximaCentesimas` (en
-  /// ese caso agrega `ErrorEntrada.propinaInvalida` a `errores`).
+  /// formato (incluidos los negativos; agrega `ErrorEntrada.propinaInvalida`)
+  /// o supera `propinaMaximaCentesimas` (agrega
+  /// `ErrorEntrada.propinaSuperaMaximo` a `errores`).
   /// Errores: ninguno.
   int? _validarPropina(String texto, List<ErrorEntrada> errores) {
     if (texto.isEmpty) return 0;
     final centesimas = _aCentesimas(texto);
-    if (centesimas == null || centesimas > propinaMaximaCentesimas) {
+    if (centesimas == null) {
       errores.add(ErrorEntrada.propinaInvalida);
+      return null;
+    }
+    if (centesimas > propinaMaximaCentesimas) {
+      errores.add(ErrorEntrada.propinaSuperaMaximo);
       return null;
     }
     return centesimas;
