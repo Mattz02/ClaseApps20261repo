@@ -56,6 +56,29 @@ void main() {
     });
   }
 
+  test('100, 4 personas y 150 % devuelven el error de propina máxima', () {
+    final validacion = validador.validar(
+      monto: '100',
+      personas: '4',
+      propina: '150',
+    );
+
+    expect(validacion.errores.map((error) => error.mensaje), [
+      'La propina no puede superar el 100%',
+    ]);
+  });
+
+  test('100, 4 personas y 100 % se permiten sin error', () {
+    final validacion = validador.validar(
+      monto: '100',
+      personas: '4',
+      propina: '100',
+    );
+
+    expect(validacion.errores, isEmpty);
+    expect(validacion.esValida, isTrue);
+  });
+
   test('LSP: la misma calculadora acepta ambas estrategias sin if ni cast', () {
     final validacion = validador.validar(
       monto: '10.00',
