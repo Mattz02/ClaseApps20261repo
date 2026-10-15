@@ -1,0 +1,266 @@
+{
+  "navegador": "firefox",
+  "version": "156.0",
+  "solicitudesCarga": [
+    "http://127.0.0.1:4173/",
+    "http://127.0.0.1:4173/assets/index-CN_07hiT.js",
+    "http://127.0.0.1:4173/assets/index-B7gD0PtV.css",
+    "http://127.0.0.1:4173/favicon.ico"
+  ],
+  "peticionesOperacion": 0,
+  "offlineVerificado": true,
+  "persistencia": {
+    "local": 0,
+    "session": 0,
+    "cookies": "",
+    "bases": []
+  },
+  "dimensiones": {
+    "ancho": 390,
+    "documento": 378
+  },
+  "resultados": [
+    {
+      "id": "A1",
+      "estadoRed": "online",
+      "valor": "27.50",
+      "errores": [],
+      "milisegundos": 34,
+      "visible": true
+    },
+    {
+      "id": "A2",
+      "estadoRed": "online",
+      "valor": "30.00",
+      "errores": [],
+      "milisegundos": 34,
+      "visible": true
+    },
+    {
+      "id": "A3",
+      "estadoRed": "online",
+      "valor": null,
+      "errores": [
+        "Debe haber al menos una persona"
+      ],
+      "milisegundos": 32,
+      "visible": false
+    },
+    {
+      "id": "A4",
+      "estadoRed": "online",
+      "valor": null,
+      "errores": [
+        "Monto inválido"
+      ],
+      "milisegundos": 34,
+      "visible": false
+    },
+    {
+      "id": "A5",
+      "estadoRed": "online",
+      "valor": "3.33",
+      "errores": [],
+      "milisegundos": 34,
+      "visible": true
+    },
+    {
+      "id": "A6",
+      "estadoRed": "online",
+      "valor": "4.00",
+      "errores": [],
+      "milisegundos": 33,
+      "visible": true
+    },
+    {
+      "id": "A7",
+      "estadoRed": "online",
+      "valor": "30.00",
+      "errores": [],
+      "milisegundos": 35,
+      "visible": true
+    },
+    {
+      "id": "máximo exacto",
+      "estadoRed": "online",
+      "valor": "10999899999.89",
+      "errores": [],
+      "milisegundos": 28,
+      "visible": true
+    },
+    {
+      "id": "máximo arriba",
+      "estadoRed": "online",
+      "valor": "10999900000.00",
+      "errores": [],
+      "milisegundos": 34,
+      "visible": true
+    },
+    {
+      "id": "mínimo exacto",
+      "estadoRed": "online",
+      "valor": "0.00",
+      "errores": [],
+      "milisegundos": 33,
+      "visible": true
+    },
+    {
+      "id": "mitad",
+      "estadoRed": "online",
+      "valor": "3.34",
+      "errores": [],
+      "milisegundos": 33,
+      "visible": true
+    },
+    {
+      "id": "sin redondeo previo",
+      "estadoRed": "online",
+      "valor": "2.00",
+      "errores": [],
+      "milisegundos": 28,
+      "visible": true
+    },
+    {
+      "id": "coma",
+      "estadoRed": "online",
+      "valor": "6.91",
+      "errores": [],
+      "milisegundos": 35,
+      "visible": true
+    },
+    {
+      "id": "varios errores",
+      "estadoRed": "online",
+      "valor": null,
+      "errores": [
+        "Monto inválido",
+        "Debe haber al menos una persona",
+        "Propina inválida"
+      ],
+      "milisegundos": 34,
+      "visible": false
+    },
+    {
+      "id": "A1",
+      "estadoRed": "offline",
+      "valor": "27.50",
+      "errores": [],
+      "milisegundos": 34,
+      "visible": true
+    },
+    {
+      "id": "A2",
+      "estadoRed": "offline",
+      "valor": "30.00",
+      "errores": [],
+      "milisegundos": 33,
+      "visible": true
+    },
+    {
+      "id": "A3",
+      "estadoRed": "offline",
+      "valor": null,
+      "errores": [
+        "Debe haber al menos una persona"
+      ],
+      "milisegundos": 34,
+      "visible": false
+    },
+    {
+      "id": "A4",
+      "estadoRed": "offline",
+      "valor": null,
+      "errores": [
+        "Monto inválido"
+      ],
+      "milisegundos": 33,
+      "visible": false
+    },
+    {
+      "id": "A5",
+      "estadoRed": "offline",
+      "valor": "3.33",
+      "errores": [],
+      "milisegundos": 33,
+      "visible": true
+    },
+    {
+      "id": "A6",
+      "estadoRed": "offline",
+      "valor": "4.00",
+      "errores": [],
+      "milisegundos": 34,
+      "visible": true
+    },
+    {
+      "id": "A7",
+      "estadoRed": "offline",
+      "valor": "30.00",
+      "errores": [],
+      "milisegundos": 32,
+      "visible": true
+    },
+    {
+      "id": "máximo exacto",
+      "estadoRed": "offline",
+      "valor": "10999899999.89",
+      "errores": [],
+      "milisegundos": 33,
+      "visible": true
+    },
+    {
+      "id": "máximo arriba",
+      "estadoRed": "offline",
+      "valor": "10999900000.00",
+      "errores": [],
+      "milisegundos": 32,
+      "visible": true
+    },
+    {
+      "id": "mínimo exacto",
+      "estadoRed": "offline",
+      "valor": "0.00",
+      "errores": [],
+      "milisegundos": 33,
+      "visible": true
+    },
+    {
+      "id": "mitad",
+      "estadoRed": "offline",
+      "valor": "3.34",
+      "errores": [],
+      "milisegundos": 33,
+      "visible": true
+    },
+    {
+      "id": "sin redondeo previo",
+      "estadoRed": "offline",
+      "valor": "2.00",
+      "errores": [],
+      "milisegundos": 33,
+      "visible": true
+    },
+    {
+      "id": "coma",
+      "estadoRed": "offline",
+      "valor": "6.91",
+      "errores": [],
+      "milisegundos": 34,
+      "visible": true
+    },
+    {
+      "id": "varios errores",
+      "estadoRed": "offline",
+      "valor": null,
+      "errores": [
+        "Monto inválido",
+        "Debe haber al menos una persona",
+        "Propina inválida"
+      ],
+      "milisegundos": 34,
+      "visible": false
+    }
+  ],
+  "erroresConsola": [],
+  "tiempoMaximoMs": 35
+}

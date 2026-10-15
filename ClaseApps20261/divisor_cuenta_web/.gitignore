@@ -10,6 +10,12 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+build/
+coverage/
+.vitest/
+.env*
+*.tmp
+Thumbs.db
 *.local
 
 # Editor directories and files
