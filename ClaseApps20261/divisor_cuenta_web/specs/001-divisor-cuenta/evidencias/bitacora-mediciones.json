@@ -1,0 +1,64 @@
+{
+  "registradoUTC": "2026-10-15T02:42:52.130982+00:00",
+  "medicionesReactActuales": [
+    {
+      "comando": "npm run build",
+      "segundosReales": 0.716,
+      "codigoSalida": 0,
+      "salida": "\n> divisor_cuenta_web@0.0.0 build\n> vite build\n\nvite v8.3.4 building client environment for production...\ntransforming...\n✓ 22 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/index.html                   0.54 kB │ gzip:  0.34 kB\ndist/assets/index-B7gD0PtV.css    4.04 kB │ gzip:  1.56 kB\ndist/assets/index-ChHyBJ4m.js   225.21 kB │ gzip: 70.76 kB\n\n✓ built in 229ms\n"
+    },
+    {
+      "comando": "npm test",
+      "segundosReales": 3.055,
+      "codigoSalida": 0,
+      "salida": "\n> divisor_cuenta_web@0.0.0 test\n> vitest run\n\n\n RUN  v5.0.4 /home/matt/PrograAppsRepo/ClaseApps20261repo/ClaseApps20261/divisor_cuenta_web\n\n\n Test Files  9 passed (9)\n      Tests  126 passed (126)\n   Start at  21:40:36\n   Duration  2.37s (environment 78%, tests 10%, setup 8%, import 2%, worker 1%, transform 1%)\n\n"
+    }
+  ],
+  "intervalosHistoricosGit": [
+    {
+      "proyecto": "Flutter",
+      "commitBase": "a6486aa",
+      "fechaBase": "2026-09-30T14:30:15-05:00",
+      "commitConPruebas": "176c421",
+      "fechaConPruebas": "2026-09-30T17:44:48-05:00",
+      "minutosEntreCommits": 194.55,
+      "advertencia": "Intervalo entre commits; no mide trabajo activo ni el instante del primer build o primera prueba aprobada."
+    },
+    {
+      "proyecto": "React",
+      "commitBase": "4e75f57",
+      "fechaBase": "2026-10-14T20:05:06-05:00",
+      "commitConPruebas": "2eac75f",
+      "fechaConPruebas": "2026-10-14T21:22:40-05:00",
+      "minutosEntreCommits": 77.57,
+      "advertencia": "Intervalo entre commits; no mide trabajo activo ni el instante del primer build o primera prueba aprobada."
+    }
+  ],
+  "tiempoTotalMigracionCronometrado": null,
+  "lineasManualesVerificables": null,
+  "specEnunciadosModificados": 0,
+  "constitutionReglasPrincipales": {
+    "total": 14,
+    "identicas": 6,
+    "adaptadasEnRedaccion": 7,
+    "reemplazadas": 1
+  },
+  "planLineas": {
+    "agregadas": 103,
+    "eliminadas": 96
+  },
+  "aceptacionReact": {
+    "aprobados": 6,
+    "total": 6
+  },
+  "aceptacionFlutter": {
+    "aprobadosDocumentados": 6,
+    "total": 6,
+    "fuente": "../divisor_cuenta/specs/001-dividir-cuenta/tasks.md; checkpoint de fase 5 y T038",
+    "reejecutadosAhora": false
+  },
+  "interaccionesReact": {
+    "mensajesVisibles": 27,
+    "definicion": "Un mensaje de usuario visible; incluye duplicados, confirmaciones y solicitud interrumpida; excluye environment_context; no equivale necesariamente a la regla original de iteraciones."
+  }
+}

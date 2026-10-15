@@ -1,0 +1,245 @@
+diff --git a/../divisor_cuenta/specs/001-dividir-cuenta/plan.md b/specs/001-divisor-cuenta/plan.md
+index 54a64ca..23c7bcb 100644
+--- a/../divisor_cuenta/specs/001-dividir-cuenta/plan.md
++++ b/specs/001-divisor-cuenta/plan.md
+@@ -1,137 +1,144 @@
+ # Implementation Plan: Dividir la cuenta del restaurante
+ 
+-**Branch**: `sdd` (feature `001-dividir-cuenta`) | **Date**: 2026-09-30 | **Spec**: [spec.md](spec.md)
++**Branch**: `sdd` | **Date**: 2026-10-14 | **Spec**: [spec.md](spec.md)
+ 
+-**Input**: Feature specification from `specs/001-dividir-cuenta/spec.md`
+-
+-**Note**: This template is filled in by the `/speckit-plan` command; its definition describes the execution workflow.
++**Input**: `specs/001-divisor-cuenta/spec.md`, leída sin modificaciones.
++El identificador devuelto por setup es `001-divisor-cuenta`; la rama Git real es `sdd`.
+ 
+ ## Summary
+ 
+-App Flutter de una pantalla: el usuario escribe monto, personas y propina, elige un modo de
+-redondeo ("Exacto" o "Hacia arriba") y, al tocar "Calcular", ve cuánto paga cada persona con 2
+-decimales, o un mensaje por cada dato inválido.
++Una pantalla React para dividir monto y propina entre personas. Validar todos los campos
++al enviar «Calcular», aplicar el redondeo elegido y mostrar dos decimales sin símbolo.
++Editar cualquier campo o modo oculta inmediatamente el resultado y los errores anteriores.
+ 
+-Enfoque técnico: tres capas (`presentation -> domain <- data`). El dinero se maneja en centavos
+-enteros y el monto exacto por persona como una fracción entera, para que el redondeo no dependa
+-de errores de `double` (research R1). Cada modo de redondeo es una implementación de la interfaz
+-`EstrategiaRedondeo`, y `main.dart` las conecta (research R4 y R5).
++JavaScript con Vite, estado local con useState, tres capas e inyección de dependencias.
++La aritmética usa BigInt y fracciones en centavos para preservar las mitades y los máximos.
++Las estrategias comparten el contrato aplicar(valor). Decisiones: [research.md](research.md).
+ 
+ ## Technical Context
+ 
+-**Language/Version**: Dart 3.13 (SDK `^3.13.4`), Flutter 3.47.5 estable
++**Language/Version**: JavaScript ESM, JSX y BigInt; herramientas con Node 24 LTS >=24.15.0.
+ 
+-**Primary Dependencies**: solo el SDK de Flutter (Material 3). Sin paquetes externos.
++**Primary Dependencies**: conservar React/ReactDOM ^19.2.8, Vite ^8.3.0 y plugin React existentes.
++Sin bibliotecas de estado externas ni nuevas dependencias de producción.
+ 
+-**Storage**: N/A (todo en memoria, FR-015)
++**Storage**: ninguno; sin backend, base de datos, peticiones ni persistencia del formulario.
+ 
+-**Testing**: `flutter_test` (incluido en el SDK): pruebas unitarias y de widget
++**Testing**: Vitest 5 y jsdom 30 como devDependencies, resueltas en lockfile al implementar.
++Unitarias en Node; hook y pantalla en jsdom con act de React y createRoot.
+ 
+-**Target Platform**: Android (principal); Linux de escritorio para desarrollo
++**Target Platform**: navegador moderno con BigInt; recursos locales o ya cargados.
+ 
+-**Project Type**: mobile-app (una sola pantalla)
++**Project Type**: aplicación web estática de una sola pantalla.
+ 
+-**Performance Goals**: resultado en menos de 1 s después de tocar "Calcular" (SC-003); en la
+-práctica es instantáneo
++**Performance Goals**: resultado visible <1 s; primer uso <30 s (SC-002 y SC-003).
+ 
+-**Constraints**: sin conexión, sin persistencia, sin paquetes externos; `lib/domain/` en Dart
+-puro; estado con `setState`
++**Constraints**: mensajes en español; punto y dos decimales sin símbolo; coma en entradas;
++límites FR-009/011/012; cálculo solo al enviar; sin datos entre sesiones. Después de cargar
++los recursos, cálculos, validaciones y cambios de modo funcionan sin red, sin peticiones de
++la aplicación ni persistencia del formulario. No se garantiza la primera apertura remota
++ni la recarga sin conexión. Sin incorporar PWA ni caché persistente.
+ 
+-**Scale/Scope**: 1 pantalla, ~10 clases, 1 usuario local
++**Scale/Scope**: tres campos, dos modos y un monto por persona; sin reparto de sobrantes.
+ 
+ ## Constitution Check
+ 
+-*GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
+-
+-| Principio | Cómo lo cumple el diseño | Estado |
+-|---|---|---|
+-| I. SRP | `ValidarEntrada` solo valida y convierte el texto, `CalcularDivision` solo calcula, `FormateadorMoneda` solo formatea y cada estrategia solo redondea | ✅ |
+-| I. OCP | Un modo nuevo = una clase nueva en `data/` + una entrada en el mapa de `main.dart`; no se edita ninguna clase existente (R5) | ✅ |
+-| I. LSP | Las dos estrategias cumplen el mismo contrato (mismas precondiciones, devuelven centavos ≥ 0, sin excepciones); ver contracts/dominio.md | ✅ |
+-| I. ISP | `EstrategiaRedondeo` tiene un solo método | ✅ |
+-| I. DIP | `DivisorController` recibe `Map<String, EstrategiaRedondeo>`; `presentation` no importa nada de `data/` | ✅ |
+-| II. Capas y dependencias | `presentation -> domain <- data`; `domain` no importa nada de las otras capas | ✅ |
+-| II. domain en Dart puro | `lib/domain/` no importa `package:flutter`; se comprueba con `grep` en quickstart.md | ✅ |
+-| II. main.dart compone | Es el único que crea `RedondeoExacto`, `RedondeoHaciaArriba`, `ValidarEntrada`, `CalcularDivision`, `FormateadorMoneda` y `DivisorController`. Los widgets y `TextEditingController` internos de la pantalla no son implementaciones de nuestras abstracciones | ✅ |
+-| III. Seguridad | No hay secretos, claves ni red | ✅ |
+-| IV. Pruebas | Pruebas unitarias de cada clase de domain, data y presentation, y los 6 escenarios de aceptación como pruebas de widget | ✅ (requiere permiso, ver abajo) |
+-| V. Código explicable | Cada clase y cada función o método (públicos y privados, incluidos `build` y los callbacks con nombre) lleva un comentario `///` que dice qué hace, por qué existe, qué recibe, qué devuelve y qué errores produce; solo se exceptúan los getters de una línea. La aritmética entera de R1 y R4 lleva un ejemplo numérico en el comentario | ✅ |
+-
+-**Resultado**: pasa antes de la Fase 0 y se volvió a revisar después de la Fase 1, sin
+-violaciones.
+-
+-**Conflicto con CLAUDE.md, resuelto el 2026-09-30**: el principio IV exige pruebas y `CLAUDE.md`
+-decía "no modifiques `test/` a menos que te lo pidan". Ahora `CLAUDE.md` permite modificar `test/`
+-cuando lo exige una tarea de `tasks.md`, así que se puede reemplazar el `test/widget_test.dart`
+-de la plantilla y crear las pruebas nuevas.
+-
+-**Reglas de validación nuevas** (research R2 y R3), confirmadas el 2026-09-30 e incorporadas en
+-FR-009, FR-011 y FR-012 de la spec:
+-
+-- Topes técnicos: monto ≤ 999 999 999.99, personas ≤ 1 000 000 y propina ≤ 999.99 %.
+-- Monto y propina aceptan como máximo 2 decimales.
++Evaluación previa a investigación y posterior al diseño contra la constitución v2.0.0:
++
++| Principio | Evidencia del diseño y verificación prevista | Previo | Posterior |
++|-----------|---------------------------------------------|--------|-----------|
++| SRP | Validación, cálculo, redondeo y formato separados | PASS | PASS |
++| OCP | Añadir proveedor y registrarlo en main; sin editar cálculo, validación, hook ni pantalla | PASS | PASS |
++| LSP / ISP | Solo aplicar, mismas unidades/precondiciones; suite compartida | PASS | PASS |
++| DIP / capas | presentation -> domain <- data; presentación no importa data | PASS | PASS |
++| Dominio puro | Sin React, DOM, efectos ni formato en domain | PASS | PASS |
++| Composición | Solo main crea proveedores y conecta dependencias | PASS | PASS |
++| Seguridad | Sin secretos ni API keys; no se necesita ningún servicio | PASS | PASS |
++| Pruebas | Matriz de FR/aceptación en contratos y quickstart; Vitest | PASS | PASS |
++| Regla de la materia | Explicar propósito, entradas, salida y errores de cada función | PASS | PASS |
++
++Estos PASS corresponden al diseño, no a código implementado ni a pruebas ejecutadas.
++Sin excepciones constitucionales ni decisiones pendientes para elaborar tareas.
++
++La constitución 2.0.0 permite explícitamente el registro de nuevas implementaciones en
++`src/main.jsx`. El catálogo admite nuevos ids sin enumeraciones cerradas en el validador;
++los dos modos de esta feature son sus entradas iniciales. La revisión de extensión comprueba
++el uso de un nuevo id/estrategia inyectado sin modificar los cuatro consumidores protegidos.
++El alcance offline anterior queda definido por instrucción explícita del usuario para
++FR-015/SC-004; se refleja en investigación, contratos y quickstart, conservando spec.md intacta.
+ 
+ ## Project Structure
+ 
+ ### Documentation (this feature)
+ 
+ ```text
+-specs/001-dividir-cuenta/
+-├── plan.md              # Este archivo
+-├── research.md          # Fase 0
+-├── data-model.md        # Fase 1
+-├── quickstart.md        # Fase 1
+-├── contracts/
+-│   ├── dominio.md       # Fase 1: domain + data
+-│   └── pantalla.md      # Fase 1: presentation + main.dart
+-├── checklists/
+-│   └── requirements.md
+-└── tasks.md             # Fase 2 (/speckit-tasks, todavía no creado)
++specs/001-divisor-cuenta/
++├── spec.md                  # Entrada intacta
++├── plan.md
++├── research.md
++├── data-model.md
++├── quickstart.md
++└── contracts/
++    ├── dominio.md
++    └── pantalla.md
+ ```
+ 
++`tasks.md` corresponde al siguiente comando, $speckit-tasks.
++
+ ### Source Code (repository root)
+ 
++Estructura prevista para implementación; esta fase no crea código:
++
+ ```text
+-lib/
+-├── main.dart                         # único punto de composición
+-├── domain/                           # Dart puro
+-│   ├── cuenta.dart                   # Cuenta
+-│   ├── resultado.dart                # Resultado
+-│   ├── error_entrada.dart            # enum ErrorEntrada (mensajes de la spec)
+-│   ├── resultado_validacion.dart     # ResultadoValidacion
+-│   ├── estrategia_redondeo.dart      # interfaz EstrategiaRedondeo (1 método)
+-│   ├── validar_entrada.dart          # ValidarEntrada
+-│   └── calcular_division.dart        # CalcularDivision
+-├── data/
+-│   ├── redondeo_exacto.dart          # RedondeoExacto implements EstrategiaRedondeo
+-│   └── redondeo_hacia_arriba.dart    # RedondeoHaciaArriba implements EstrategiaRedondeo
+-└── presentation/
+-    ├── formateador_moneda.dart       # FormateadorMoneda
+-    ├── divisor_controller.dart       # DivisorController
+-    └── pantalla_divisor.dart         # PantallaDivisor (StatefulWidget)
+-
+-test/
++src/
+ ├── domain/
+-│   ├── validar_entrada_test.dart
+-│   └── calcular_division_test.dart   # usa una estrategia falsa definida en la prueba (LSP/DIP)
++│   ├── cuenta.js
++│   ├── resultado.js
++│   ├── calcularDivision.js
++│   ├── validarEntrada.js
++│   └── estrategiaRedondeo.js
+ ├── data/
+-│   ├── redondeo_exacto_test.dart
+-│   └── redondeo_hacia_arriba_test.dart
++│   ├── redondeoExacto.js
++│   └── redondeoHaciaArriba.js
+ ├── presentation/
+-│   ├── formateador_moneda_test.dart
+-│   └── divisor_controller_test.dart
+-└── aceptacion_test.dart              # los 6 escenarios de la spec + FR-014 (pruebas de widget)
++│   ├── useDivisor.js
++│   ├── formateadorMoneda.js
++│   └── PantallaDivisor.jsx
++├── main.jsx
++└── index.css
++tests/
++├── unit/
++│   ├── validarEntrada.test.js
++│   ├── calcularDivision.test.js
++│   ├── redondeo.test.js
++│   └── formateadorMoneda.test.js
++├── contract/
++│   └── estrategiaRedondeo.test.js
++└── integration/
++    ├── useDivisor.test.jsx
++    └── PantallaDivisor.test.jsx
++vite.config.js
++package.json
++package-lock.json
+ ```
+ 
+-`test/widget_test.dart` (el contador de la plantilla) se elimina, con permiso del usuario.
++**Structure Decision**: cuenta.js y resultado.js definen datos y contratos JSDoc.
++validarEntrada valida/normaliza texto; calcularDivision recibe Cuenta válida y estrategia.
++estrategiaRedondeo documenta la única operación aplicar. Main crea una vez ambos proveedores
++y el catálogo de opciones, e inyecta validación/cálculo/catálogo en pantalla y hook.
++El formateador puro pertenece a presentación. El hook no importa data ni crea proveedores.
++La pantalla genera los modos desde el catálogo, sin switches por tipo concreto.
++Los modelos son registros de datos, no instancias de servicios.
++
++Flujo: texto -> validarEntrada -> Cuenta -> calcularDivision(cuenta, estrategia)
++-> Resultado -> formateadorMoneda -> pantalla. Un error impide llamar al cálculo.
++Firmas/unidades: [contrato de dominio](contracts/dominio.md).
+ 
+-**Structure Decision**: un solo proyecto Flutter con las tres capas pedidas en `lib/`, y `test/`
+-con la misma estructura. Además de las clases que nombró el usuario, se agregan `ErrorEntrada` y
+-`ResultadoValidacion` para que `ValidarEntrada` devuelva sus errores sin mezclarlos con el
+-`Resultado` del cálculo (SRP). Colocar las estrategias en `data/` sigue la regla "domain define la
+-interfaz, data la implementa", aunque no sean fuentes de datos. No se tocan `android/`, `ios/` ni
+-`pubspec.yaml`.
++Al implementar: reemplazar el montaje del ejemplo Vite por PantallaDivisor y retirar recursos
++de demostración sin uso; mantener ESM, plugin React y lint. Añadir Vitest/jsdom y scripts
++`test` (vitest run) y `test:watch` (vitest). Cada función debe ser explicable por el estudiante.
+ 
+ ## Complexity Tracking
+ 
+-No hay violaciones de la constitución que justificar.
++Sin violaciones que justificar. BigInt evita pérdida de precisión dentro de los límites;
++cociente y resto bastan, sin biblioteca decimal, contenedor de inyección ni store global.

@@ -1,0 +1,124 @@
+{
+  "flutter": "../divisor_cuenta/test/casos_de_prueba.dart",
+  "react": "test/casosDePrueba.js",
+  "criterio": "Comparación de campos y valores; double.nan y NaN representan la misma entrada no numérica. Sin comparar sintaxis.",
+  "cantidadFlutter": 6,
+  "cantidadReact": 6,
+  "todosCoinciden": true,
+  "casos": [
+    {
+      "flutter": {
+        "nombre": "1. reparto normal",
+        "monto": 100,
+        "personas": 4,
+        "propina": 10,
+        "modo": "exacto",
+        "esperado": 27.5
+      },
+      "react": {
+        "nombre": "1. reparto normal",
+        "monto": 100,
+        "personas": 4,
+        "propina": 10,
+        "modo": "exacto",
+        "esperado": 27.5
+      },
+      "coincide": true
+    },
+    {
+      "flutter": {
+        "nombre": "2. sin propina",
+        "monto": 90,
+        "personas": 3,
+        "propina": 0,
+        "modo": "exacto",
+        "esperado": 30
+      },
+      "react": {
+        "nombre": "2. sin propina",
+        "monto": 90,
+        "personas": 3,
+        "propina": 0,
+        "modo": "exacto",
+        "esperado": 30
+      },
+      "coincide": true
+    },
+    {
+      "flutter": {
+        "nombre": "3. cero personas",
+        "monto": 50,
+        "personas": 0,
+        "propina": 0,
+        "modo": "exacto",
+        "errorEsperado": "Debe haber al menos una persona"
+      },
+      "react": {
+        "nombre": "3. cero personas",
+        "monto": 50,
+        "personas": 0,
+        "propina": 0,
+        "modo": "exacto",
+        "errorEsperado": "Debe haber al menos una persona"
+      },
+      "coincide": true
+    },
+    {
+      "flutter": {
+        "nombre": "4. monto no numerico",
+        "monto": "NaN",
+        "personas": 4,
+        "propina": 0,
+        "modo": "exacto",
+        "errorEsperado": "Monto inválido"
+      },
+      "react": {
+        "nombre": "4. monto no numerico",
+        "monto": "NaN",
+        "personas": 4,
+        "propina": 0,
+        "modo": "exacto",
+        "errorEsperado": "Monto inválido"
+      },
+      "coincide": true
+    },
+    {
+      "flutter": {
+        "nombre": "5. redondeo exacto",
+        "monto": 10,
+        "personas": 3,
+        "propina": 0,
+        "modo": "exacto",
+        "esperado": 3.33
+      },
+      "react": {
+        "nombre": "5. redondeo exacto",
+        "monto": 10,
+        "personas": 3,
+        "propina": 0,
+        "modo": "exacto",
+        "esperado": 3.33
+      },
+      "coincide": true
+    },
+    {
+      "flutter": {
+        "nombre": "6. redondeo hacia arriba",
+        "monto": 10,
+        "personas": 3,
+        "propina": 0,
+        "modo": "arriba",
+        "esperado": 4
+      },
+      "react": {
+        "nombre": "6. redondeo hacia arriba",
+        "monto": 10,
+        "personas": 3,
+        "propina": 0,
+        "modo": "arriba",
+        "esperado": 4
+      },
+      "coincide": true
+    }
+  ]
+}
