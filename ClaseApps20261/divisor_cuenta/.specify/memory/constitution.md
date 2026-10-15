@@ -1,4 +1,9 @@
 <!--
+Enmienda 2026-10-14 — 1.0.0 → 1.0.1
+- Se cambia la referencia operativa del agente de CLAUDE.md a AGENTS.md para
+  continuar con Codex. CLAUDE.md remite a AGENTS.md por compatibilidad.
+- Los cinco principios y los documentos de la feature conservan su contenido.
+
 Sync Impact Report
 - Cambio de versión: (plantilla sin llenar) → 1.0.0
 - Principios definidos (antes eran marcadores de la plantilla):
@@ -14,7 +19,7 @@ Sync Impact Report
   - .specify/templates/plan-template.md ✅ su "Constitution Check" se llena a partir de este archivo
   - .specify/templates/spec-template.md ✅ sin cambios necesarios
   - .specify/templates/tasks-template.md ✅ sin cambios necesarios
-  - CLAUDE.md ✅ coherente (capas, regla de dependencia, domain sin Flutter)
+  - AGENTS.md ✅ coherente (capas, regla de dependencia, domain sin Flutter)
 - TODOs pendientes: ninguno
 -->
 
@@ -61,7 +66,7 @@ El código DEBE respetar los cinco principios SOLID:
 
 ## Gobernanza
 
-- Esta constitución prevalece sobre cualquier otra práctica del proyecto. `CLAUDE.md` da
+- Esta constitución prevalece sobre cualquier otra práctica del proyecto. `AGENTS.md` da
   las instrucciones operativas del agente y no debe contradecirla.
 - **Enmiendas:** se hacen editando este archivo (por ejemplo con `/speckit-constitution`),
   registrando el cambio en el Sync Impact Report y actualizando la versión y la fecha de
@@ -73,4 +78,4 @@ El código DEBE respetar los cinco principios SOLID:
   principios en su "Constitution Check", y todo cambio se revisa contra ellos antes de
   integrarse. Cualquier excepción DEBE justificarse por escrito en el plan.
 
-**Versión**: 1.0.0 | **Ratificada**: 2026-09-30 | **Última enmienda**: 2026-09-30
+**Versión**: 1.0.1 | **Ratificada**: 2026-09-30 | **Última enmienda**: 2026-10-14
