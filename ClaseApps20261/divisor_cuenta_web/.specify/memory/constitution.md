@@ -1,50 +1,100 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report
+- Cambio de versión: 1.0.0 → 2.0.0.
+- Motivo del cambio MAJOR: redefinición explícita de OCP solicitada por el usuario;
+  se permite registrar nuevas implementaciones en src/main.jsx.
+- Principio modificado: I. Calidad de código (SOLID), únicamente el apartado OCP;
+  el título y los demás principios se conservan.
+- Secciones añadidas: ninguna.
+- Secciones eliminadas: ninguna.
+- Marcadores pendientes: ninguno.
+- Seguimiento documental: actualizar las referencias a constitución v1.0.0 en plan.md
+  y tasks.md mediante sus respectivos flujos; esos archivos no se modifican aquí.
+Este informe es material temporal de revisión; retirarlo antes de confirmar el archivo en Git.
+-->
+# Constitución de divisor_cuenta_web
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Calidad de código (SOLID)
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+El código DEBE respetar los cinco principios SOLID:
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+- **SRP:** cada función o módulo DEBE tener una sola razón de cambio.
+  El cálculo NO DEBE validar ni formatear.
+- **OCP:** Agregar una nueva regla de redondeo NO DEBE exigir modificar el cálculo,
+  la validación, el hook ni la pantalla. Se permite registrar la nueva
+  implementación en `src/main.jsx`, único punto de composición.
+- **LSP:** cualquier implementación de la interfaz de redondeo DEBE poder sustituir
+  a otra sin que quien la usa pregunte de qué tipo es.
+- **ISP:** las interfaces DEBEN ser pequeñas; ningún consumidor DEBE depender
+  de funciones que no usa.
+- **DIP:** `presentation` DEBE depender de abstracciones de `domain`, nunca de
+  implementaciones concretas de `data`.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+Estas reglas separan responsabilidades y permiten cambiar el redondeo mediante
+implementaciones sustituibles.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### II. Arquitectura por capas
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+- El código DEBE organizarse en `src/presentation/`, `src/domain/` y `src/data/`.
+- Las dependencias DEBEN seguir la dirección `presentation -> domain <- data`.
+- `src/domain/` DEBE ser JavaScript puro: NO DEBE importar React ni depender del DOM.
+- `src/main.jsx` DEBE ser el ÚNICO lugar donde se instancian implementaciones concretas.
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+Esta separación mantiene el dominio independiente de la interfaz y concentra la composición
+de las implementaciones en un solo lugar.
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+### III. Seguridad
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+El repositorio NUNCA DEBE contener secretos ni API keys.
+
+Esta regla evita exponer credenciales a través del código y su historial.
+
+### IV. Calidad y pruebas
+
+- Toda funcionalidad crítica DEBE tener pruebas.
+- Los criterios de aceptación de la especificación DEBEN convertirse en pruebas ejecutables.
+
+Las pruebas permiten comprobar el comportamiento crítico y verificar la aceptación de la
+funcionalidad descrita en la especificación.
+
+### V. Regla de la materia
+
+Toda función generada por el agente DEBE poder ser explicada por el estudiante, incluyendo:
+
+- Qué hace.
+- Por qué existe.
+- Qué recibe.
+- Qué devuelve.
+- Qué errores produce.
+
+Esta regla mantiene la comprensión del código por parte del estudiante.
+
+## Alcance
+
+Esta constitución recoge exclusivamente los cinco grupos de principios indicados para
+`divisor_cuenta_web`. Las reglas de arquitectura se aplican a las capas y al punto de
+composición indicados; la regla de la materia se aplica a toda función generada por el agente.
+
+## Verificación de cumplimiento
+
+La revisión de los cambios DEBE comprobar los cinco principios anteriores: responsabilidades
+SOLID, dirección de dependencias y composición en `src/main.jsx`, ausencia de secretos,
+pruebas de funcionalidad crítica y de criterios de aceptación, y capacidad del estudiante
+para explicar las funciones generadas por el agente.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+Las modificaciones de esta constitución DEBEN identificar los principios afectados, explicar
+el cambio y actualizar su versión y fecha de modificación. Agregar o cambiar principios
+requiere una instrucción explícita del responsable del proyecto.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+La versión DEBE seguir el esquema MAJOR.MINOR.PATCH: MAJOR para eliminar o redefinir
+principios de forma incompatible; MINOR para añadir principios o ampliar materialmente
+las reglas; PATCH para aclaraciones o correcciones que no cambien su significado.
+
+La revisión de cumplimiento DEBE usar los principios vigentes y los criterios de la sección
+«Verificación de cumplimiento».
+
+**Version**: 2.0.0 | **Ratified**: 2026-10-14 | **Last Amended**: 2026-10-14
