@@ -1,0 +1,19 @@
+Prueba real de protección de main
+2026-10-28T18:03:13.419102+00:00
+Repositorio: https://github.com/Mattz02/ClaseApps20261repo
+Prueba: push de un commit vacío (mismo árbol que main) desde un repositorio temporal.
+Comando: git push origin 2fb32076f65eadd31e2da1c5f7b3fce6784b4ea1:refs/heads/main
+main antes: a8713011943fa5464d7458fb57a914d4ae713760
+main después: a8713011943fa5464d7458fb57a914d4ae713760
+Código de salida: 1
+
+git: 'credential-manager' is not a git command. See 'git --help'.
+git: 'credential-manager' is not a git command. See 'git --help'.
+remote: error: GH006: Protected branch update failed for refs/heads/main.        
+remote: 
+remote: - Changes must be made through a pull request.        
+remote: 
+remote: - Required status check "build" is expected.        
+To https://github.com/Mattz02/ClaseApps20261repo.git
+ ! [remote rejected] 2fb32076f65eadd31e2da1c5f7b3fce6784b4ea1 -> main (protected branch hook declined)
+error: failed to push some refs to 'https://github.com/Mattz02/ClaseApps20261repo.git'
