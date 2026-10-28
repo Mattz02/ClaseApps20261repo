@@ -1,0 +1,16 @@
+Log real de GitHub Actions
+https://github.com/Mattz02/ClaseApps20261repo/actions/runs/40743285797/job/123010291727
+
+2026-10-28T18:16:21.4725744Z ✅ /home/runner/work/ClaseApps20261repo/ClaseApps20261repo/ClaseApps20261/divisor_cuenta/test/aceptacion_test.dart: US2 - avisar cuando los datos no son válidos escenario 3: 50.00 y 0 personas → mensaje y sin resultado
+2026-10-28T18:16:21.7243417Z ✅ /home/runner/work/ClaseApps20261repo/ClaseApps20261repo/ClaseApps20261/divisor_cuenta/test/aceptacion_test.dart: US2 - avisar cuando los datos no son válidos escenario 4: monto "abc" → "Monto inválido" y sin resultado
+2026-10-28T18:16:21.7834062Z ##[endgroup]
+2026-10-28T18:16:21.7836081Z ##[group]❌ /home/runner/work/ClaseApps20261repo/ClaseApps20261repo/ClaseApps20261/divisor_cuenta/test/division_test.dart: 1. reparto normal (failed)
+2026-10-28T18:16:21.7836955Z Expected: a numeric value within <0.001> of <27.0>
+2026-10-28T18:16:21.7837301Z   Actual: <27.5>
+2026-10-28T18:16:21.7837508Z    Which:  differs by <0.5>
+2026-10-28T18:16:21.7837666Z 
+2026-10-28T18:16:21.7855327Z package:matcher               expect
+2026-10-28T18:16:21.7856029Z test/division_test.dart 51:9  main.<fn>
+2026-10-28T18:16:21.7857112Z ##[endgroup]
+2026-10-28T18:16:21.7902073Z ##[group]✅ Passing tests
+2026-10-28T18:16:21.7906647Z ✅ /home/runner/work/ClaseApps20261repo/ClaseApps20261repo/ClaseApps20261/divisor_cuenta/test/division_test.dart: 2. sin propina
