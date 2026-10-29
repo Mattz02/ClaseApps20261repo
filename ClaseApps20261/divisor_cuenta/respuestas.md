@@ -61,6 +61,8 @@ Cambié el resultado esperado de `27.50` a `27.00` en el caso «1. reparto norma
 
 ![CI rojo](evidencias/parte3_rojo.jpg)
 
+![Detalle de la prueba que falló](evidencias/parte3_log_fallo.png)
+
 [Fragmento del log real](evidencias/parte3_log_fallo.txt).
 
 ## 3. Integración, entrega y despliegue continuos
@@ -75,7 +77,7 @@ Implementé CI y una introducción a continuous delivery: después de pasar CI e
 
 Exigir PR y el check `build` evita integrar cambios que incumplen las comprobaciones del pipeline. No garantiza que todo error posible quede detectado. El PR #3 estuvo bloqueado cuando falló la prueba; después de corregirla pasó CI y se fusionó.
 
-**Evidencia faltante:** no conservé la captura del botón de merge bloqueado. La captura del CI rojo no reemplaza esa evidencia y el PR ya fusionado no muestra su estado histórico de bloqueo.
+![Merge bloqueado por el check fallido](evidencias/parte3_merge_bloqueado.png)
 
 ![Protección de main](evidencias/parte2_proteccion.png)
 
@@ -100,7 +102,7 @@ El fallo de `27.00` frente a `27.50` era intencional; no fue un error descubiert
 - [x] Workflow en `main`, fusionado mediante los PR #2 y #4.
 - [x] Cada PR ejecuta análisis, pruebas y compilación; si un paso falla, los siguientes se omiten.
 - [x] El PR #3 tiene una ejecución roja y otra verde.
-- [ ] Captura histórica del merge bloqueado de la Parte 3: no disponible.
+- [x] Captura histórica del merge bloqueado de la Parte 3 adjunta.
 - [x] Repositorio público.
 - [x] `main` exige PR y el check `build`, incluso para administradores; captura de protección adjunta.
 - [x] `entrega` generó y subió el APK; captura del artifact adjunta.
