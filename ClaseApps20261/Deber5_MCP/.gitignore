@@ -1,0 +1,7 @@
+# Entorno y archivos locales del Deber 5
+.venv-deber5/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+.env
+.env.*
