@@ -1,0 +1,19 @@
+{
+  "archivo": "logs_sinteticos.csv",
+  "sha256_antes": "7d8219e9f8c9dd995be0c2dc038f4f7e67f0f12446b4fdc07fadf508befb5da8",
+  "codificacion": "UTF-8 válida (lector utf-8-sig)",
+  "delimitador": ",",
+  "columnas_requeridas_presentes": [
+    "timestamp",
+    "ip",
+    "user",
+    "event",
+    "result",
+    "detail"
+  ],
+  "columnas_adicionales": 0,
+  "registros": 93,
+  "fechas_invalidas": [],
+  "registros_multilinea": [],
+  "registros_malformados": []
+}

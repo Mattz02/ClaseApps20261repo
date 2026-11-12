@@ -1,0 +1,939 @@
+[
+  {
+    "timestamp": "2026-11-05T01:01:00-05:00",
+    "ip": "192.0.2.13",
+    "user": "luisa",
+    "event": "login",
+    "result": "success",
+    "fila": 2,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:02:00-05:00",
+    "ip": "192.0.2.11",
+    "user": "sofia",
+    "event": "login",
+    "result": "failed",
+    "fila": 3,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:03:00-05:00",
+    "ip": "192.0.2.10",
+    "user": "sofia",
+    "event": "login",
+    "result": "success",
+    "fila": 4,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:03:00-05:00",
+    "ip": "192.0.2.13",
+    "user": "carlos",
+    "event": "login",
+    "result": "success",
+    "fila": 5,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:04:00-05:00",
+    "ip": "192.0.2.13",
+    "user": "ana",
+    "event": "login",
+    "result": "success",
+    "fila": 6,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:05:00-05:00",
+    "ip": "192.0.2.12",
+    "user": "luisa",
+    "event": "login",
+    "result": "failed",
+    "fila": 7,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:06:00-05:00",
+    "ip": "192.0.2.13",
+    "user": "carlos",
+    "event": "login",
+    "result": "success",
+    "fila": 8,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:07:00-05:00",
+    "ip": "192.0.2.11",
+    "user": "maria",
+    "event": "login",
+    "result": "success",
+    "fila": 9,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:07:00-05:00",
+    "ip": "192.0.2.12",
+    "user": "maria",
+    "event": "login",
+    "result": "success",
+    "fila": 10,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:09:00-05:00",
+    "ip": "192.0.2.12",
+    "user": "diego",
+    "event": "login",
+    "result": "success",
+    "fila": 11,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:10:00-05:00",
+    "ip": "192.0.2.12",
+    "user": "carlos",
+    "event": "login",
+    "result": "success",
+    "fila": 12,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:11:00-05:00",
+    "ip": "192.0.2.10",
+    "user": "ana",
+    "event": "login",
+    "result": "success",
+    "fila": 13,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:12:00-05:00",
+    "ip": "192.0.2.10",
+    "user": "carlos",
+    "event": "login",
+    "result": "failed",
+    "fila": 14,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:13:00-05:00",
+    "ip": "192.0.2.12",
+    "user": "maria",
+    "event": "login",
+    "result": "success",
+    "fila": 15,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:14:00-05:00",
+    "ip": "192.0.2.11",
+    "user": "luisa",
+    "event": "login",
+    "result": "success",
+    "fila": 16,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:14:00-05:00",
+    "ip": "198.51.100.77",
+    "user": "admin",
+    "event": "login",
+    "result": "failed",
+    "fila": 17,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:15:00-05:00",
+    "ip": "192.0.2.13",
+    "user": "carlos",
+    "event": "login",
+    "result": "success",
+    "fila": 18,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:15:00-05:00",
+    "ip": "198.51.100.77",
+    "user": "admin",
+    "event": "login",
+    "result": "failed",
+    "fila": 19,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:15:00-05:00",
+    "ip": "198.51.100.77",
+    "user": "admin",
+    "event": "login",
+    "result": "failed",
+    "fila": 20,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:16:00-05:00",
+    "ip": "192.0.2.12",
+    "user": "maria",
+    "event": "login",
+    "result": "success",
+    "fila": 21,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:16:00-05:00",
+    "ip": "198.51.100.77",
+    "user": "admin",
+    "event": "login",
+    "result": "failed",
+    "fila": 22,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:16:00-05:00",
+    "ip": "198.51.100.77",
+    "user": "admin",
+    "event": "login",
+    "result": "failed",
+    "fila": 23,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:17:00-05:00",
+    "ip": "192.0.2.12",
+    "user": "maria",
+    "event": "login",
+    "result": "failed",
+    "fila": 24,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:17:00-05:00",
+    "ip": "198.51.100.77",
+    "user": "admin",
+    "event": "login",
+    "result": "failed",
+    "fila": 25,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:17:00-05:00",
+    "ip": "198.51.100.77",
+    "user": "admin",
+    "event": "login",
+    "result": "failed",
+    "fila": 26,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:18:00-05:00",
+    "ip": "198.51.100.77",
+    "user": "admin",
+    "event": "login",
+    "result": "failed",
+    "fila": 27,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:19:00-05:00",
+    "ip": "198.51.100.77",
+    "user": "admin",
+    "event": "login",
+    "result": "success",
+    "fila": 28,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:20:00-05:00",
+    "ip": "192.0.2.12",
+    "user": "diego",
+    "event": "login",
+    "result": "success",
+    "fila": 29,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:21:00-05:00",
+    "ip": "192.0.2.12",
+    "user": "diego",
+    "event": "login",
+    "result": "success",
+    "fila": 30,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:25:00-05:00",
+    "ip": "192.0.2.12",
+    "user": "maria",
+    "event": "login",
+    "result": "failed",
+    "fila": 31,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:27:00-05:00",
+    "ip": "192.0.2.12",
+    "user": "sofia",
+    "event": "login",
+    "result": "success",
+    "fila": 32,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:27:00-05:00",
+    "ip": "192.0.2.44",
+    "user": "api_service",
+    "event": "debug",
+    "result": "warning",
+    "fila": 33,
+    "detail": "token=[REDACTED]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:28:00-05:00",
+    "ip": "192.0.2.10",
+    "user": "maria",
+    "event": "login",
+    "result": "failed",
+    "fila": 34,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:29:00-05:00",
+    "ip": "192.0.2.13",
+    "user": "maria",
+    "event": "login",
+    "result": "success",
+    "fila": 35,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:30:00-05:00",
+    "ip": "192.0.2.13",
+    "user": "carlos",
+    "event": "login",
+    "result": "success",
+    "fila": 36,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:34:00-05:00",
+    "ip": "192.0.2.13",
+    "user": "sofia",
+    "event": "login",
+    "result": "success",
+    "fila": 37,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:35:00-05:00",
+    "ip": "192.0.2.25",
+    "user": "maria",
+    "event": "login",
+    "result": "failed",
+    "fila": 38,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:36:00-05:00",
+    "ip": "192.0.2.25",
+    "user": "maria",
+    "event": "login",
+    "result": "failed",
+    "fila": 39,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:37:00-05:00",
+    "ip": "192.0.2.11",
+    "user": "carlos",
+    "event": "login",
+    "result": "success",
+    "fila": 40,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:37:00-05:00",
+    "ip": "192.0.2.25",
+    "user": "maria",
+    "event": "login",
+    "result": "failed",
+    "fila": 41,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:38:00-05:00",
+    "ip": "192.0.2.25",
+    "user": "maria",
+    "event": "login",
+    "result": "success",
+    "fila": 42,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:39:00-05:00",
+    "ip": "192.0.2.11",
+    "user": "luisa",
+    "event": "login",
+    "result": "success",
+    "fila": 43,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:41:00-05:00",
+    "ip": "192.0.2.12",
+    "user": "sofia",
+    "event": "login",
+    "result": "success",
+    "fila": 44,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:43:00-05:00",
+    "ip": "192.0.2.11",
+    "user": "carlos",
+    "event": "login",
+    "result": "success",
+    "fila": 45,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:43:00-05:00",
+    "ip": "192.0.2.11",
+    "user": "diego",
+    "event": "login",
+    "result": "failed",
+    "fila": 46,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:45:00-05:00",
+    "ip": "192.0.2.13",
+    "user": "luisa",
+    "event": "login",
+    "result": "failed",
+    "fila": 47,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:46:00-05:00",
+    "ip": "192.0.2.13",
+    "user": "sofia",
+    "event": "login",
+    "result": "success",
+    "fila": 48,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:46:00-05:00",
+    "ip": "192.0.2.11",
+    "user": "maria",
+    "event": "login",
+    "result": "success",
+    "fila": 49,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:46:00-05:00",
+    "ip": "192.0.2.11",
+    "user": "luisa",
+    "event": "login",
+    "result": "success",
+    "fila": 50,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:47:00-05:00",
+    "ip": "192.0.2.12",
+    "user": "carlos",
+    "event": "login",
+    "result": "failed",
+    "fila": 51,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:47:00-05:00",
+    "ip": "192.0.2.11",
+    "user": "maria",
+    "event": "login",
+    "result": "success",
+    "fila": 52,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:47:00-05:00",
+    "ip": "192.0.2.12",
+    "user": "carlos",
+    "event": "login",
+    "result": "success",
+    "fila": 53,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:48:00-05:00",
+    "ip": "192.0.2.12",
+    "user": "ana",
+    "event": "login",
+    "result": "success",
+    "fila": 54,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:49:00-05:00",
+    "ip": "192.0.2.10",
+    "user": "maria",
+    "event": "login",
+    "result": "success",
+    "fila": 55,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:49:00-05:00",
+    "ip": "192.0.2.11",
+    "user": "maria",
+    "event": "login",
+    "result": "success",
+    "fila": 56,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:49:00-05:00",
+    "ip": "203.0.113.42",
+    "user": "guest",
+    "event": "access",
+    "result": "denied",
+    "fila": 57,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:50:00-05:00",
+    "ip": "192.0.2.13",
+    "user": "maria",
+    "event": "login",
+    "result": "success",
+    "fila": 58,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:50:00-05:00",
+    "ip": "203.0.113.42",
+    "user": "guest",
+    "event": "role_change",
+    "result": "success",
+    "fila": 59,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": [
+      {
+        "atributo": "approved",
+        "valor": "false",
+        "delimitador_previo": " ",
+        "delimitador_siguiente": "fin"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-11-05T01:53:00-05:00",
+    "ip": "192.0.2.10",
+    "user": "diego",
+    "event": "login",
+    "result": "failed",
+    "fila": 60,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:54:00-05:00",
+    "ip": "192.0.2.10",
+    "user": "diego",
+    "event": "login",
+    "result": "success",
+    "fila": 61,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:54:00-05:00",
+    "ip": "192.0.2.13",
+    "user": "ana",
+    "event": "login",
+    "result": "success",
+    "fila": 62,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:55:00-05:00",
+    "ip": "192.0.2.10",
+    "user": "ana",
+    "event": "login",
+    "result": "success",
+    "fila": 63,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T01:58:00-05:00",
+    "ip": "192.0.2.11",
+    "user": "sofia",
+    "event": "login",
+    "result": "success",
+    "fila": 64,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T02:00:00-05:00",
+    "ip": "192.0.2.12",
+    "user": "luisa",
+    "event": "login",
+    "result": "success",
+    "fila": 65,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T02:00:00-05:00",
+    "ip": "192.0.2.13",
+    "user": "sofia",
+    "event": "login",
+    "result": "success",
+    "fila": 66,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T02:01:00-05:00",
+    "ip": "203.0.113.89",
+    "user": "ana",
+    "event": "login",
+    "result": "failed",
+    "fila": 67,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T02:01:00-05:00",
+    "ip": "203.0.113.89",
+    "user": "carlos",
+    "event": "login",
+    "result": "failed",
+    "fila": 68,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T02:02:00-05:00",
+    "ip": "192.0.2.10",
+    "user": "carlos",
+    "event": "login",
+    "result": "success",
+    "fila": 69,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T02:02:00-05:00",
+    "ip": "203.0.113.89",
+    "user": "luisa",
+    "event": "login",
+    "result": "failed",
+    "fila": 70,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T02:02:00-05:00",
+    "ip": "203.0.113.89",
+    "user": "diego",
+    "event": "login",
+    "result": "failed",
+    "fila": 71,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T02:03:00-05:00",
+    "ip": "192.0.2.10",
+    "user": "luisa",
+    "event": "login",
+    "result": "success",
+    "fila": 72,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T02:03:00-05:00",
+    "ip": "203.0.113.89",
+    "user": "maria",
+    "event": "login",
+    "result": "failed",
+    "fila": 73,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T02:03:00-05:00",
+    "ip": "203.0.113.89",
+    "user": "sofia",
+    "event": "login",
+    "result": "failed",
+    "fila": 74,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T02:04:00-05:00",
+    "ip": "192.0.2.13",
+    "user": "ana",
+    "event": "login",
+    "result": "success",
+    "fila": 75,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T02:04:00-05:00",
+    "ip": "192.0.2.11",
+    "user": "ana",
+    "event": "login",
+    "result": "success",
+    "fila": 76,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T02:05:00-05:00",
+    "ip": "192.0.2.13",
+    "user": "sofia",
+    "event": "login",
+    "result": "success",
+    "fila": 77,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T02:10:00-05:00",
+    "ip": "192.0.2.200",
+    "user": "healthbot",
+    "event": "healthcheck",
+    "result": "success",
+    "fila": 78,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T02:11:00-05:00",
+    "ip": "192.0.2.10",
+    "user": "carlos",
+    "event": "login",
+    "result": "success",
+    "fila": 79,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T02:11:00-05:00",
+    "ip": "192.0.2.200",
+    "user": "healthbot",
+    "event": "healthcheck",
+    "result": "success",
+    "fila": 80,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T02:12:00-05:00",
+    "ip": "192.0.2.200",
+    "user": "healthbot",
+    "event": "healthcheck",
+    "result": "success",
+    "fila": 81,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T02:13:00-05:00",
+    "ip": "192.0.2.200",
+    "user": "healthbot",
+    "event": "healthcheck",
+    "result": "success",
+    "fila": 82,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T02:14:00-05:00",
+    "ip": "192.0.2.200",
+    "user": "healthbot",
+    "event": "healthcheck",
+    "result": "success",
+    "fila": 83,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T02:15:00-05:00",
+    "ip": "192.0.2.200",
+    "user": "healthbot",
+    "event": "healthcheck",
+    "result": "success",
+    "fila": 84,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T02:17:00-05:00",
+    "ip": "192.0.2.11",
+    "user": "ana",
+    "event": "login",
+    "result": "success",
+    "fila": 85,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T02:21:00-05:00",
+    "ip": "192.0.2.13",
+    "user": "sofia",
+    "event": "login",
+    "result": "success",
+    "fila": 86,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T02:24:00-05:00",
+    "ip": "192.0.2.11",
+    "user": "maria",
+    "event": "login",
+    "result": "failed",
+    "fila": 87,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T02:24:00-05:00",
+    "ip": "192.0.2.11",
+    "user": "maria",
+    "event": "login",
+    "result": "success",
+    "fila": 88,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T02:24:00-05:00",
+    "ip": "192.0.2.13",
+    "user": "sofia",
+    "event": "login",
+    "result": "success",
+    "fila": 89,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T02:25:00-05:00",
+    "ip": "192.0.2.13",
+    "user": "maria",
+    "event": "login",
+    "result": "success",
+    "fila": 90,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T02:27:00-05:00",
+    "ip": "192.0.2.13",
+    "user": "luisa",
+    "event": "login",
+    "result": "success",
+    "fila": 91,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T02:27:00-05:00",
+    "ip": "192.0.2.11",
+    "user": "luisa",
+    "event": "login",
+    "result": "success",
+    "fila": 92,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T02:29:00-05:00",
+    "ip": "192.0.2.10",
+    "user": "luisa",
+    "event": "login",
+    "result": "success",
+    "fila": 93,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  },
+  {
+    "timestamp": "2026-11-05T02:29:00-05:00",
+    "ip": "192.0.2.11",
+    "user": "luisa",
+    "event": "login",
+    "result": "success",
+    "fila": 94,
+    "detail": "[OMITIDO]",
+    "atributos_aprobacion": []
+  }
+]

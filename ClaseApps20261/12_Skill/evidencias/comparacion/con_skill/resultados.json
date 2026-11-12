@@ -1,0 +1,298 @@
+{
+  "cobertura": {
+    "inicio": "2026-11-05T01:01:00-05:00",
+    "fin": "2026-11-05T02:29:00-05:00",
+    "zonas": [
+      "UTC-05:00"
+    ],
+    "orden_original_cronologico": true,
+    "identidades_ausentes": [],
+    "duplicados_exactos": [
+      [
+        19,
+        20
+      ],
+      [
+        22,
+        23
+      ],
+      [
+        25,
+        26
+      ]
+    ]
+  },
+  "R1": [
+    {
+      "ip": "192.0.2.11",
+      "user": "sofia",
+      "ventanas": []
+    },
+    {
+      "ip": "192.0.2.12",
+      "user": "luisa",
+      "ventanas": []
+    },
+    {
+      "ip": "192.0.2.10",
+      "user": "carlos",
+      "ventanas": []
+    },
+    {
+      "ip": "198.51.100.77",
+      "user": "admin",
+      "ventanas": [
+        {
+          "inicio": "2026-11-05T01:14:00-05:00",
+          "fin": "2026-11-05T01:18:00-05:00",
+          "segundos": 240.0,
+          "conteo": 8,
+          "filas": [
+            17,
+            19,
+            20,
+            22,
+            23,
+            25,
+            26,
+            27
+          ],
+          "exitos_posteriores": [
+            {
+              "fila": 28,
+              "timestamp": "2026-11-05T01:19:00-05:00",
+              "segundos_desde_ultimo_fallo": 60.0
+            }
+          ]
+        },
+        {
+          "inicio": "2026-11-05T01:15:00-05:00",
+          "fin": "2026-11-05T01:18:00-05:00",
+          "segundos": 180.0,
+          "conteo": 7,
+          "filas": [
+            19,
+            20,
+            22,
+            23,
+            25,
+            26,
+            27
+          ],
+          "exitos_posteriores": [
+            {
+              "fila": 28,
+              "timestamp": "2026-11-05T01:19:00-05:00",
+              "segundos_desde_ultimo_fallo": 60.0
+            }
+          ]
+        },
+        {
+          "inicio": "2026-11-05T01:15:00-05:00",
+          "fin": "2026-11-05T01:18:00-05:00",
+          "segundos": 180.0,
+          "conteo": 7,
+          "filas": [
+            19,
+            20,
+            22,
+            23,
+            25,
+            26,
+            27
+          ],
+          "exitos_posteriores": [
+            {
+              "fila": 28,
+              "timestamp": "2026-11-05T01:19:00-05:00",
+              "segundos_desde_ultimo_fallo": 60.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ip": "192.0.2.12",
+      "user": "maria",
+      "ventanas": []
+    },
+    {
+      "ip": "192.0.2.10",
+      "user": "maria",
+      "ventanas": []
+    },
+    {
+      "ip": "192.0.2.25",
+      "user": "maria",
+      "ventanas": []
+    },
+    {
+      "ip": "192.0.2.11",
+      "user": "diego",
+      "ventanas": []
+    },
+    {
+      "ip": "192.0.2.13",
+      "user": "luisa",
+      "ventanas": []
+    },
+    {
+      "ip": "192.0.2.12",
+      "user": "carlos",
+      "ventanas": []
+    },
+    {
+      "ip": "192.0.2.10",
+      "user": "diego",
+      "ventanas": []
+    },
+    {
+      "ip": "203.0.113.89",
+      "user": "ana",
+      "ventanas": []
+    },
+    {
+      "ip": "203.0.113.89",
+      "user": "carlos",
+      "ventanas": []
+    },
+    {
+      "ip": "203.0.113.89",
+      "user": "luisa",
+      "ventanas": []
+    },
+    {
+      "ip": "203.0.113.89",
+      "user": "diego",
+      "ventanas": []
+    },
+    {
+      "ip": "203.0.113.89",
+      "user": "maria",
+      "ventanas": []
+    },
+    {
+      "ip": "203.0.113.89",
+      "user": "sofia",
+      "ventanas": []
+    },
+    {
+      "ip": "192.0.2.11",
+      "user": "maria",
+      "ventanas": []
+    }
+  ],
+  "R2": [
+    {
+      "ip": "192.0.2.11",
+      "ventanas": []
+    },
+    {
+      "ip": "192.0.2.12",
+      "ventanas": []
+    },
+    {
+      "ip": "192.0.2.10",
+      "ventanas": []
+    },
+    {
+      "ip": "198.51.100.77",
+      "ventanas": []
+    },
+    {
+      "ip": "192.0.2.25",
+      "ventanas": []
+    },
+    {
+      "ip": "192.0.2.13",
+      "ventanas": []
+    },
+    {
+      "ip": "203.0.113.89",
+      "ventanas": [
+        {
+          "inicio": "2026-11-05T02:01:00-05:00",
+          "fin": "2026-11-05T02:03:00-05:00",
+          "segundos": 120.0,
+          "conteo": 6,
+          "filas": [
+            67,
+            68,
+            70,
+            71,
+            73,
+            74
+          ]
+        },
+        {
+          "inicio": "2026-11-05T02:01:00-05:00",
+          "fin": "2026-11-05T02:03:00-05:00",
+          "segundos": 120.0,
+          "conteo": 6,
+          "filas": [
+            67,
+            68,
+            70,
+            71,
+            73,
+            74
+          ]
+        }
+      ]
+    }
+  ],
+  "R3_filas": [
+    33
+  ],
+  "role_change": [
+    {
+      "timestamp": "2026-11-05T01:50:00-05:00",
+      "ip": "203.0.113.42",
+      "user": "guest",
+      "event": "role_change",
+      "result": "success",
+      "fila": 59,
+      "detail": "[OMITIDO]",
+      "atributos_aprobacion": [
+        {
+          "atributo": "approved",
+          "valor": "false",
+          "delimitador_previo": " ",
+          "delimitador_siguiente": "fin"
+        }
+      ]
+    }
+  ],
+  "conteos_evento_resultado": [
+    {
+      "event": "login",
+      "result": "success",
+      "conteo": 56
+    },
+    {
+      "event": "login",
+      "result": "failed",
+      "conteo": 28
+    },
+    {
+      "event": "debug",
+      "result": "warning",
+      "conteo": 1
+    },
+    {
+      "event": "access",
+      "result": "denied",
+      "conteo": 1
+    },
+    {
+      "event": "role_change",
+      "result": "success",
+      "conteo": 1
+    },
+    {
+      "event": "healthcheck",
+      "result": "success",
+      "conteo": 6
+    }
+  ]
+}

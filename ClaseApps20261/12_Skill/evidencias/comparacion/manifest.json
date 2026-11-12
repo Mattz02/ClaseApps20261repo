@@ -1,0 +1,90 @@
+[
+  {
+    "archivo": "evidencias/comparacion/sin_skill/traza.md",
+    "sha256": "6ec4398efcb8eff8c433c9517c3e7ff0e982b18c74e063319f58e2b97f3774f2"
+  },
+  {
+    "archivo": "evidencias/comparacion/sin_skill/registrar_traza.py",
+    "sha256": "38a83c345a970fb0ea5a8b1eb28d5ed833733efa94adbb4b51181d83b96beb4c"
+  },
+  {
+    "archivo": "evidencias/comparacion/sin_skill/informe.md",
+    "sha256": "d761c2c0df40a7f36204da68a79961699fa70a4b509e60d1694e8d2d39dc30a5"
+  },
+  {
+    "archivo": "evidencias/comparacion/sin_skill/duplicados.txt",
+    "sha256": "7e678988fa317de35580ceeb638f30a3709f05c26879a202980b2e048d631b53"
+  },
+  {
+    "archivo": "evidencias/comparacion/sin_skill/duplicados.py",
+    "sha256": "b4e85b8df32c55967d3efc4a4b39e290a7f9cbc198909c00da0890d650b2e91b"
+  },
+  {
+    "archivo": "evidencias/comparacion/sin_skill/verificacion.txt",
+    "sha256": "c1a2ab38508a61c5044d9ae7f46c7d5b558f4ebc4e7cf77c0fd9cb64e605a964"
+  },
+  {
+    "archivo": "evidencias/comparacion/sin_skill/verificar.py",
+    "sha256": "8194f58103c25c5acabecf83d4865c41e45e30e545126e42505e817654a418fd"
+  },
+  {
+    "archivo": "evidencias/comparacion/sin_skill/salida_enmascarada.txt",
+    "sha256": "74e0cb9743ff7ae5a6176f7dc435f9aaff59f82d1c1753809eca4173aeeb8824"
+  },
+  {
+    "archivo": "evidencias/comparacion/sin_skill/analizar.py",
+    "sha256": "16a9b05f5a7fb966b946904abf1b5ba30d8d13a9b0272804c498a3ae825219d3"
+  },
+  {
+    "archivo": "evidencias/comparacion/con_skill/comprobar_entrega.py",
+    "sha256": "408a70bf674a4354bbfd148872c65f46049f43ee8ea7e8323161db215b21c447"
+  },
+  {
+    "archivo": "evidencias/comparacion/con_skill/traza.md",
+    "sha256": "2415851b823507016036881a38666e7bd1a75699b66e408c41fdbf84bac2d174"
+  },
+  {
+    "archivo": "evidencias/comparacion/con_skill/documentar_traza.py",
+    "sha256": "5ea5a060ac31b9a6b4a464c14b9328cd5ab1491b38cde8c91f042c20ad184ee8"
+  },
+  {
+    "archivo": "evidencias/comparacion/con_skill/informe.md",
+    "sha256": "1f836f78420aa4200acec8917d6105e58b08c9cc25109e80400fc5486083e5f9"
+  },
+  {
+    "archivo": "evidencias/comparacion/con_skill/verificacion.json",
+    "sha256": "c12ce638be66c40a7336e1a8812ff35b9f3fa32f2ec7d638d0a62e3fe02ed19c"
+  },
+  {
+    "archivo": "evidencias/comparacion/con_skill/verificar.py",
+    "sha256": "26718938058ac99e63b684e215c535f901e446e9d70ef0cadd1abba177b3c224"
+  },
+  {
+    "archivo": "evidencias/comparacion/con_skill/resultados.json",
+    "sha256": "2c14b46cccdf6cf41aeaa11037b206f7edb53e24943bad1ea5c52722013ec673"
+  },
+  {
+    "archivo": "evidencias/comparacion/con_skill/evidencia_enmascarada.json",
+    "sha256": "549a03b54c5b5f2108120637c53dd0f9801730177b3c302bf15b463dba2b5e66"
+  },
+  {
+    "archivo": "evidencias/comparacion/con_skill/analizar.py",
+    "sha256": "976f0cd4780697b945d1c4895bd4e417b823f40598d1148b8750f90d78c0a72b"
+  },
+  {
+    "archivo": "evidencias/comparacion/con_skill/validacion.json",
+    "sha256": "da656515636febc6a0a9fdf28bbad5e166ae57a7cef3c6488ac6843cf74fc14a"
+  },
+  {
+    "archivo": "evidencias/comparacion/con_skill/validar.py",
+    "sha256": "0981a4fc68801fdace6995c9d847b6a4785ff9ad4426eda0b925f4f6e2ce8c39"
+  },
+  {
+    "archivo": "evidencias/comparacion/con_skill/incident-investigator/SKILL.md",
+    "sha256": "a967b21541635e5177ff7fb6e2cc86f2bd8c668152771255bab5c9988761f89e"
+  },
+  {
+    "archivo": "evidencias/comparacion/con_skill/incident-investigator/references/detection-rules.md",
+    "sha256": "03bc37d538d233bee657e6611c47a4d44d6d7e5dd1a8a69ef57933746ce4f01c"
+  }
+]
