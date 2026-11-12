@@ -1,0 +1,61 @@
+{
+  "verificacion": "Todas las aserciones ejecutadas pasaron, contra una nueva lectura del CSV original",
+  "R1": {
+    "filas": [
+      17,
+      19,
+      20,
+      22,
+      23,
+      25,
+      26,
+      27
+    ],
+    "registros": 8,
+    "duracion_segundos": 240,
+    "exito_fila": 28,
+    "exito_delta_segundos": 60,
+    "combinaciones_completas_distintas": 5
+  },
+  "R2": {
+    "filas": [
+      67,
+      68,
+      70,
+      71,
+      73,
+      74
+    ],
+    "usuarios_distintos": 6,
+    "duracion_segundos": 120
+  },
+  "R3": {
+    "fila": 33,
+    "marcador": "token=[REDACTED]"
+  },
+  "R4": {
+    "fila": 59,
+    "atributo": "approved=false",
+    "cantidad_atributos_approved": 1
+  },
+  "bajo_umbral": {
+    "fallos": [
+      38,
+      39,
+      41
+    ],
+    "conteo": 3,
+    "segundos": 120.0,
+    "exito": 42
+  },
+  "healthchecks": [
+    78,
+    80,
+    81,
+    82,
+    83,
+    84
+  ],
+  "sha256_despues": "7d8219e9f8c9dd995be0c2dc038f4f7e67f0f12446b4fdc07fadf508befb5da8",
+  "csv_sin_cambios": true
+}

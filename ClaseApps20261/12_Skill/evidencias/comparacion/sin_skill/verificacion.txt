@@ -1,0 +1,16 @@
+columnas: ["timestamp", "ip", "user", "event", "result", "detail"]
+registros: 93
+eventos_resultados: {"login/success": 56, "login/failed": 28, "debug/warning": 1, "access/denied": 1, "role_change/success": 1, "healthcheck/success": 6}
+periodo: ["2026-11-05T01:01:00-05:00", "2026-11-05T02:29:00-05:00"]
+orden_no_decreciente: true
+campos_faltantes_o_extra: 0
+duplicados_exactos: 3
+grupo 198.51.100.77: {"lineas": [17, 19, 20, 22, 23, 25, 26, 27, 28], "usuarios": ["admin"], "resultados": {"failed": 8, "success": 1}, "inicio": "2026-11-05T01:14:00-05:00", "fin": "2026-11-05T01:19:00-05:00"}
+grupo 203.0.113.89: {"lineas": [67, 68, 70, 71, 73, 74], "usuarios": ["ana", "carlos", "diego", "luisa", "maria", "sofia"], "resultados": {"failed": 6}, "inicio": "2026-11-05T02:01:00-05:00", "fin": "2026-11-05T02:03:00-05:00"}
+grupo 192.0.2.25: {"lineas": [38, 39, 41, 42], "usuarios": ["maria"], "resultados": {"failed": 3, "success": 1}, "inicio": "2026-11-05T01:35:00-05:00", "fin": "2026-11-05T01:38:00-05:00"}
+grupo 192.0.2.200: {"lineas": [78, 80, 81, 82, 83, 84], "usuarios": ["healthbot"], "resultados": {"success": 6}, "inicio": "2026-11-05T02:10:00-05:00", "fin": "2026-11-05T02:15:00-05:00"}
+ordinary_login: {"cantidad": 65, "resultados": {"success": 54, "failed": 11}}
+credencial_linea_33: {"campo_token_presente": true, "valor_no_vacio": true, "valor_oculto": true}
+metadatos_permitidos_linea_57: {"resource": "/admin"}
+metadatos_permitidos_linea_59: {"role": "user->admin", "approved": "false"}
+sha256_despues: "7d8219e9f8c9dd995be0c2dc038f4f7e67f0f12446b4fdc07fadf508befb5da8"

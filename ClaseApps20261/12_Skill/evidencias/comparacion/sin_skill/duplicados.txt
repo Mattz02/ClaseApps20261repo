@@ -1,0 +1,20 @@
+{
+  "grupos_lineas_duplicadas": [
+    [
+      19,
+      20
+    ],
+    [
+      22,
+      23
+    ],
+    [
+      25,
+      26
+    ]
+  ],
+  "registros_unicos_totales": 90,
+  "fallos_admin_registros": 8,
+  "fallos_admin_registros_unicos": 5,
+  "sha256_despues": "7d8219e9f8c9dd995be0c2dc038f4f7e67f0f12446b4fdc07fadf508befb5da8"
+}
